@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   validinput.c                                       :+:      :+:    :+:   */
+/*   read_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 17:51:20 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 19:51:11 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/21 18:35:33 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/03/21 18:41:31 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-int		validinput(char *path)
+int		read_error(char *path)
 {
-	if (!validextension(path))
-		return (extension_error(path, INPUT_EXTENSION));
-	if (!readable(path))
-		return (read_error(path));
-	return (0);
+	printf("❌Error: \"%s\" no es un archivo legible\n", path);
+	return (1);
 }

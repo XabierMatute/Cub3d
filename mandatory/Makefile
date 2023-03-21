@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/21 18:14:17 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/21 18:36:41 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,11 +59,13 @@ endef
 export CUBE
 NAME := cub3D
 
-SRC :=	main.c						\
-		checkinput/validinput.c		\
+SRC :=	main.c							\
+		checkinput/validinput.c			\
 		checkinput/validextension.c		\
-		errors/argc_error.c			\
-		errors/extension_error.c	\
+		checkinput/readable.c			\
+		errors/argc_error.c				\
+		errors/extension_error.c		\
+		errors/read_error.c				\
 
 HEADER := cub3D.h
 		
