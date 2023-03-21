@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/21 17:30:56 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/21 18:14:17 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,10 @@ export CUBE
 NAME := cub3D
 
 SRC :=	main.c						\
+		checkinput/validinput.c		\
+		checkinput/validextension.c		\
+		errors/argc_error.c			\
+		errors/extension_error.c	\
 
 HEADER := cub3D.h
 		
@@ -88,7 +92,7 @@ $(NAME) : $(OBJ)
 	$(MAKE) -C mlx 2> logs
 	$(RM) logs
 	@echo "$(GREEN)MLX compiled...$(WHITE)"
-	$(CC) $(CFLAGS) $(MLXF) $(OBJ) -o $(NAME)
+	$(CC) $(CFLAGS) $(MLXF) ./libft/libft.a $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Cub3d compiled...$(WHITE)"
 	@echo "$(CYAN)$$CUBE$(WHITE)"
 

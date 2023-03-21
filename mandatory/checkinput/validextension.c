@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   validextension.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 17:06:05 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 17:50:01 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/21 18:08:42 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/03/21 18:15:43 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "../cub3D.h"
 
-int	main(int argc, char *argv[])
+int		validextension(char *path)
 {
-	if (argc != 2)
-		return (argc_error(argc));
-	if (!validinput(argv[1]))
-		return (1);
-	// return (cub3d(parse(argv[1])));
-	return (0);
+	path += ft_strlen(path) - ft_strlen(INPUT_EXTENSION);
+	if (ft_strncmp(path, INPUT_EXTENSION, ft_strlen(INPUT_EXTENSION)))
+	{
+		return (0);
+	}
+	return (1);
 }
