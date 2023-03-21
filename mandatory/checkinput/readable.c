@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:26:16 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 19:48:46 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/21 20:00:25 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-int		readable(char *path)
+int	readable(char *path)
 {
 	int		fd;
 	char	s[42];

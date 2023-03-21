@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 18:35:07 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/21 19:59:04 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-#include <fcntl.h>
+# include <fcntl.h>
 # include "./libft/libft.h"
 
 /* ------------------- CHECKINPUT ---------------------*/
 int		validinput(char *path);
 int		validextension(char *path);
-# define	INPUT_EXTENSION ".cub"
+# define INPUT_EXTENSION ".cub"
 
 int		readable(char *path);
 
