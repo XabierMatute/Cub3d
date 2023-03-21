@@ -1,3 +1,12 @@
+# Binary
+cub3D
+
+# VS
+.vscode
+
+# Mac
+.DS_Store
+
 # Prerequisites
 *.d
 
