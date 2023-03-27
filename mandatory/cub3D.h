@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 19:59:04 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/27 14:09:42 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,15 @@ int		validextension(char *path);
 # define INPUT_EXTENSION ".cub"
 
 int		readable(char *path);
+int		have_all_data(char *path);
+int		datanum(char *path, char *id);
 
 /* ------------------- PARSE ---------------------*/
 
 /* ------------------- INIT ---------------------*/
 
 /* ------------------- UTILS ---------------------*/
+char	*ft_get_next_line(int fd);
 
 /* ------------------- END ---------------------*/
 
@@ -38,5 +41,9 @@ int		readable(char *path);
 int		argc_error(int argc);
 int		extension_error(char *path, char *extension);
 int		read_error(char *path);
+int		format_error(char *path);
+int		nodata_error(char *id);
+int		missingdata_error(char *path);
+int		repeatdata_error(char *path);
 
 #endif
