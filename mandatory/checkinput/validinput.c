@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:51:20 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 13:21:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:40:53 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	validformat(char *path)
 		return (repeat_error(path));
 	if (!valid_data(path))//Colores R,G,B en rango [0,255]: 0, 255, 255
 		return (validdata_error(path));
-	// if (!strange_id(path))
-	// 	return (strange_error(path));
+	if (strange_id(path))
+		return (strange_error(path));
 	// if (!validmap(get_map(path)))
 	// 	return (map_error(path));
 	return (1);

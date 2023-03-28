@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/28 17:35:07 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/28 18:40:53 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,8 @@ SRC :=	main.c							\
 		checkinput/have_data.c			\
 		checkinput/valid_data.c			\
 		checkinput/valid_colors.c		\
-		checkinput/are_inrange.c	\
+		checkinput/are_inrange.c		\
+		checkinput/strange_id.c			\
 		parse/get_data.c				\
 		checkinput/are_num.c			\
 		utils/ft_get_next_line.c		\
@@ -90,6 +91,8 @@ SRC :=	main.c							\
 		errors/double_coma_error.c		\
 		errors/color_n_error.c			\
 		errors/color_r_error.c			\
+		errors/strange_error.c			\
+		
 
 HEADER := cub3D.h
 		
