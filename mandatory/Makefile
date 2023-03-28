@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/28 13:54:00 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/28 17:35:07 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,9 @@ SRC :=	main.c							\
 		checkinput/have_data.c			\
 		checkinput/valid_data.c			\
 		checkinput/valid_colors.c		\
+		checkinput/are_inrange.c	\
 		parse/get_data.c				\
+		checkinput/are_num.c			\
 		utils/ft_get_next_line.c		\
 		utils/ft_free2.c				\
 		utils/ft_args_lenght.c			\
@@ -85,6 +87,9 @@ SRC :=	main.c							\
 		errors/empty_error.c			\
 		errors/color_c_error.c			\
 		errors/color_error.c			\
+		errors/double_coma_error.c		\
+		errors/color_n_error.c			\
+		errors/color_r_error.c			\
 
 HEADER := cub3D.h
 		
@@ -133,6 +138,9 @@ commit:
 	git add $(SRC) $(HEADER) ./Makefile
 	git commit -m "commit general"
 	git push
+
+test: all
+	./Cub3d test.cub
 	
 clean : 
 		$(RM) $(OBJ)
@@ -146,4 +154,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re sani flagless normi commit
+.PHONY : all clean fclean re sani flagless normi commit test

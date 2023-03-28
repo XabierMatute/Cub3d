@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:31:34 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/27 16:20:11 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:26:40 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,15 @@ static	char	*parse_data(char *line, int	idlen)
 {
 	char	*data;
 	size_t	i;
+	size_t	f;
 
 	i = idlen;
 	while (line[i] == ' ')
 		i++;
-	data = ft_strdup(line + i);
+	f = i;
+	while (line[f] && line[f] != ' ' && line[f] != '\n')
+		f++;
+	data = ft_substr(line, i, f - i);
 	free(line);
 	return (data);
 }

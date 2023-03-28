@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 13:07:09 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/28 17:34:50 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		all_have_space(char *path);
 int		all_have_data(char *path);
 int		all_valid_colors(char *path);
 int		are_all_num(char **ss);
+int		are_all_inrange(char **ss);
 
 /* ------------------- PARSE ---------------------*/
 char	*get_raw_data(char *path, char *id);
@@ -67,6 +68,9 @@ int		nospace_error(char *id);
 int		empty_error(char *id);
 int		color_error(char *id);
 int		color_c_error(int c);
+int		double_coma_error(char *id);
+int		color_n_error(char *id);
+int		color_r_error(char *id);
 
 
 #endif
