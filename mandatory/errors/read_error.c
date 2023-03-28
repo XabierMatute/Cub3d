@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:35:33 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 19:59:37 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:23:07 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	read_error(char *path)
 {
 	printf("❌Error: \"%s\" no es un archivo legible\n", path);
-	return (1);
+	return (0);
 }

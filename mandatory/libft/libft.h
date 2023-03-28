@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/29 14:47:05 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/01/29 17:09:27 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:10:52 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void		ft_lstadd_back(t_list **lst, t_list *new);
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
-
-int			ft_printf(char const *s, ...);
+char		**ft_split(char const *s, char c);
 
 #endif

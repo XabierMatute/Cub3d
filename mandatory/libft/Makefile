@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 16:17:58 by xmatute-          #+#    #+#              #
-#    Updated: 2023/02/21 16:05:51 by jperez           ###   ########.fr        #
+#    Updated: 2023/03/27 17:12:04 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ SRC =	ft_isalpha.c ft_toupper.c \
 		ft_putstr_fd.c  \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c  \
+		ft_split.c  	\
 
 		
 # ft_.c

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:01:03 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 19:59:54 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:22:14 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	extension_error(char *path, char *extension)
 {
 	printf("❌Error: \"%s\" no es un archivo %s\n", path, extension);
-	return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/25 20:28:02 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/28 13:47:16 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,16 +61,30 @@ NAME := cub3D
 
 SRC :=	main.c							\
 		checkinput/validinput.c			\
-		checkinput/validextension.c	\
+		checkinput/validextension.c		\
 		checkinput/readable.c			\
-		checkinput/datanum.c		   	\
-		checkinput/have_all_data.c  	\
+		checkinput/datanum.c			\
+		checkinput/have_all_data.c		\
+		checkinput/have_repeat_data.c	\
+		checkinput/have_space.c			\
+		checkinput/have_data.c			\
+		checkinput/valid_data.c			\
+		checkinput/valid_colors.c		\
+		parse/get_data.c				\
 		utils/ft_get_next_line.c		\
+		utils/ft_free2.c				\
+		utils/ft_args_lenght.c			\
 		errors/argc_error.c				\
 		errors/extension_error.c		\
 		errors/read_error.c				\
 		errors/format_error.c			\
 		errors/missingdata_error.c		\
+		errors/repeat_data_error.c		\
+		errors/nospace_error.c			\
+		errors/validdata_error.c		\
+		errors/empty_error.c			\
+		errors/color_c_error.c			\
+		errors/color_error.c			\
 
 HEADER := cub3D.h
 		
@@ -115,6 +129,9 @@ flagless:
 normi:
 	norminette $(SRC) $(HEADER)
 
+gitadd:
+	git add $(SRC) $(HEADER) Makefile
+	
 clean : 
 		$(RM) $(OBJ)
 		make clean -C libft
@@ -127,4 +144,4 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : all clean fclean re sani flagless normi
+.PHONY : all clean fclean re sani flagless normi gitadd
