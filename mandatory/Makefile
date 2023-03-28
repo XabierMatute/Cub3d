@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/28 13:47:16 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/28 13:53:05 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,8 +129,10 @@ flagless:
 normi:
 	norminette $(SRC) $(HEADER)
 
-gitadd:
+commit:
 	git add $(SRC) $(HEADER) Makefile
+	git commit -m "commit general"
+	git push
 	
 clean : 
 		$(RM) $(OBJ)
