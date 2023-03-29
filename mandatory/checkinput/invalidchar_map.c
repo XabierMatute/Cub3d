@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:16:30 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 17:36:08 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:55:54 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,18 @@ int	is_player(char c)
 	return (c == 'N' || c == 'S' || c == 'E' || c == 'W');
 }
 
+int	is_void(char c)
+{
+	return (c == '\n' || c == ' ' || c == '\0');
+}
+
 int	invalidchar(char c)
 {
 	if (c == '1')
 		return (0);
 	if (c == '0')
 		return (0);
-	if (c == '\n')
-		return (0);
-	if (c == ' ')
+	if (is_void(c))
 		return (0);
 	if (is_player(c))
 		return (0);

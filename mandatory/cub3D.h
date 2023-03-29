@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 18:21:14 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:56:22 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	ft_free2(void **arr);
 int		ft_args_lenght(char **args);
 int		valid_id(char	*line);
 int		is_player(char c);
+int		is_void(char c);
 
 /* ------------------- END ---------------------*/
 

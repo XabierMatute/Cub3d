@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:23:56 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 17:32:24 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/29 18:28:11 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	map_open(char *path)
 	{
 		if (valid_id(line))
 			i++;
-		else if (i == 6)
+		if (i == 6)
 		{
 			free(line);
 			return (fd);
