@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/29 17:47:32 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/29 18:22:35 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,7 @@ SRC :=	main.c							\
 		checkinput/strange_id.c			\
 		checkinput/invalidchar_map.c	\
 		checkinput/players_map.c		\
+		checkinput/closed_map.c			\
 		parse/get_data.c				\
 		parse/get_map.c					\
 		checkinput/are_num.c			\
@@ -98,6 +99,7 @@ SRC :=	main.c							\
 		errors/map_error.c				\
 		errors/map_invalidchar_error.c	\
 		errors/players_error.c			\
+		errors/map_close_error.c		\
 		
 
 HEADER := cub3D.h
