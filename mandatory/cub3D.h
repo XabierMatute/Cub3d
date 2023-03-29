@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 18:39:22 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:47:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,13 @@ int		all_valid_colors(char *path);
 int		are_all_num(char **ss);
 int		are_all_inrange(char **ss);
 int		strange_id(char	*path);
+int		invalidchar_map(char **map);
+size_t	players_map(char **map);
 
 /* ------------------- PARSE ---------------------*/
 char	*get_raw_data(char *path, char *id);
 char	*get_data(char *path, char *id);
+char	**get_raw_map(char *path);
 
 /* ------------------- INIT ---------------------*/
 
@@ -52,6 +55,8 @@ char	*get_data(char *path, char *id);
 char	*ft_get_next_line(int fd);
 void	ft_free2(void **arr);
 int		ft_args_lenght(char **args);
+int		valid_id(char	*line);
+int		is_player(char c);
 
 /* ------------------- END ---------------------*/
 
@@ -73,6 +78,9 @@ int		color_c_error(int c);
 int		double_coma_error(char *id);
 int		color_n_error(char *id);
 int		color_r_error(char *id);
+int		map_error(char *path);
+int		map_invalidchar_error(void);
+int		players_error(size_t n);
 
 
 #endif

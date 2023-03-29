@@ -6,26 +6,27 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:51:20 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 18:51:07 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/29 17:43:22 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-// int	validmap(char **map)
-// {
-// 	if (invalidchar(map))
-// 		return (map_invalidchar_error(map));
-// 	if (!singleplayer(map))
-// 		return (map_multiplayer_error(map));
-// 	if (!closed(map))
-// 		return (map_close_error(map));
-// 	// if (have_emptyline(map))
-// 	// 	return (map_emptyline_error(map));
-// 	// if (have_space(map))
-// 	// 	return (map_space_error(map));
-// 	return (1);
-// }
+int	validmap(char **map)
+{
+	if (invalidchar_map(map))
+		return (ft_free2((void **)map), map_invalidchar_error());
+	if (players_map(map) != 1)
+		return (players_error(players_map(map)));
+	// if (!closed(map))
+	// 	return (map_close_error(map));
+	// // if (have_emptyline(map))
+	// // 	return (map_emptyline_error(map));
+	// // if (have_space(map))
+	// // 	return (map_space_error(map));
+	ft_free2((void **)map);
+	return (1);
+}
 
 int	validformat(char *path)
 {
@@ -37,8 +38,8 @@ int	validformat(char *path)
 		return (validdata_error(path));
 	if (strange_id(path))
 		return (strange_error(path));
-	// if (!validmap(get_map(path)))
-	// 	return (map_error(path));
+	if (!validmap(get_raw_map(path)))
+		return (map_error(path));
 	return (1);
 }
 

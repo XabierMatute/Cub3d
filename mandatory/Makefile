@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/28 18:40:53 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/29 17:47:32 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,7 +72,10 @@ SRC :=	main.c							\
 		checkinput/valid_colors.c		\
 		checkinput/are_inrange.c		\
 		checkinput/strange_id.c			\
+		checkinput/invalidchar_map.c	\
+		checkinput/players_map.c		\
 		parse/get_data.c				\
+		parse/get_map.c					\
 		checkinput/are_num.c			\
 		utils/ft_get_next_line.c		\
 		utils/ft_free2.c				\
@@ -92,6 +95,9 @@ SRC :=	main.c							\
 		errors/color_n_error.c			\
 		errors/color_r_error.c			\
 		errors/strange_error.c			\
+		errors/map_error.c				\
+		errors/map_invalidchar_error.c	\
+		errors/players_error.c			\
 		
 
 HEADER := cub3D.h
