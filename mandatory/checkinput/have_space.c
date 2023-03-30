@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:31:52 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/27 16:20:54 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:33:38 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	have_space(char *path, char	*id)
 {
 	char	*data;
 	char	c;
-	
+
 	data = get_raw_data(path, id);
 	c = data[0];
 	free(data);
@@ -37,5 +37,5 @@ int	all_have_space(char *path)
 		return (nospace_error("F"));
 	if (!have_space(path, "C"))
 		return (nospace_error("C"));
-	return(1);
+	return (1);
 }

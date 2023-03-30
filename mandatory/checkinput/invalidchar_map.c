@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:16:30 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 18:55:54 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:34:12 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	invalidchar_line(char *line)
 	{
 		if (invalidchar(*line))
 		{
-			return(printf("caracter invalido: %c\n", *line));
+			return (printf("caracter invalido: %c\n", *line));
 		}
 		line++;
 	}
@@ -54,7 +54,7 @@ int	invalidchar_map(char **map)
 	{
 		if (invalidchar_line(*map))
 		{
-			return(printf("\ten la linea: %s\n", *map));
+			return (printf("\ten la linea: %s\n", *map));
 		}
 		map++;
 	}

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/30 19:57:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:35:56 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,15 @@ enum {
 	B,
 };
 
-
+typedef struct s_game{
+	void	*no_texture;
+	void	*ea_texture;
+	void	*so_texture;
+	void	*we_texture;
+	char	f_color[3];
+	char	c_color[3];
+	char	**map;
+}	t_game;
 
 /* ------------------- CHECKINPUT ---------------------*/
 int		validinput(char *path);

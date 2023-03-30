@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:31:52 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/27 16:50:53 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:33:06 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	have_data(char *path, char	*id)
 {
 	char	*data;
 	char	c;
-	
+
 	data = get_data(path, id);
 	c = data[0];
 	free(data);
@@ -37,5 +37,5 @@ int	all_have_data(char *path)
 		return (empty_error("F"));
 	if (!have_data(path, "C"))
 		return (empty_error("C"));
-	return(1);
+	return (1);
 }

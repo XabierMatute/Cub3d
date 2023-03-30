@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:09:48 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 13:37:03 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:38:43 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,5 @@ int	valid_data(char *path)
 		return (0);
 	if (!all_valid_colors(path))
 		return (0);
-	return(1);
+	return (1);
 }

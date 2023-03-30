@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:51:20 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/30 22:27:14 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:10:45 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	have_emptyline(char **map)
 	while (*map)
 	{
 		if (**map == '\n')
-			return(printf("❌Error: el mapa tiene al menos una linea vacia\n"));
+			return (printf("❌Error: el mapa tiene al menos una linea vacia\n"));
 		map++;
 	}
 	return (0);
 }
 
-int	validmap(char **map)//vacio
+int	validmap(char **map)
 {
 	if (have_emptyline(map))
 		return (0);
@@ -52,7 +52,7 @@ int	validformat(char *path)
 	return (1);
 }
 
-int	validinput(char *path)//acuerdate de checkear que valen las texturas
+int	validinput(char *path)
 {
 	if (!validextension(path))
 		return (extension_error(path, INPUT_EXTENSION));
