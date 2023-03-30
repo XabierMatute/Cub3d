@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 17:16:30 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 18:57:48 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:27:13 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int	closed_map(char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if (map[i][j] == '0' && !closed(map, i, j))
+			if ((map[i][j] == '0' || is_player(map[i][j])) && !closed(map, i, j))
 				return (0);
 			j++;
 		}

@@ -6,24 +6,33 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:51:20 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 18:28:59 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 22:27:14 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-int	validmap(char **map)
+int	have_emptyline(char **map)
 {
+	while (*map)
+	{
+		if (**map == '\n')
+			return(printf("❌Error: el mapa tiene al menos una linea vacia\n"));
+		map++;
+	}
+	return (0);
+}
+
+int	validmap(char **map)//vacio
+{
+	if (have_emptyline(map))
+		return (0);
 	if (invalidchar_map(map))
 		return (ft_free2((void **)map), map_invalidchar_error());
 	if (players_map(map) != 1)
-		return (ft_free2((void **)map), players_error(players_map(map)));
+		return (players_error(players_map(map)), ft_free2((void **)map), 0);
 	if (!closed_map(map))
 		return (ft_free2((void **)map), map_close_error());
-	// // if (have_emptyline(map))
-	// // 	return (map_emptyline_error(map));
-	// // if (have_space(map))
-	// // 	return (map_space_error(map));
 	ft_free2((void **)map);
 	return (1);
 }
@@ -43,7 +52,7 @@ int	validformat(char *path)
 	return (1);
 }
 
-int	validinput(char *path)
+int	validinput(char *path)//acuerdate de checkear que valen las texturas
 {
 	if (!validextension(path))
 		return (extension_error(path, INPUT_EXTENSION));

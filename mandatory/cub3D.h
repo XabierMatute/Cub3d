@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/29 18:56:22 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 19:57:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ enum {
 	G,
 	B,
 };
+
+
 
 /* ------------------- CHECKINPUT ---------------------*/
 int		validinput(char *path);
@@ -49,6 +51,7 @@ int		closed_map(char **map);
 char	*get_raw_data(char *path, char *id);
 char	*get_data(char *path, char *id);
 char	**get_raw_map(char *path);
+char	**get_map(char *path);
 
 /* ------------------- INIT ---------------------*/
 
@@ -85,5 +88,8 @@ int		map_invalidchar_error(void);
 int		players_error(size_t n);
 int		map_close_error(void);
 
+
+
+int	printmap(char **args);
 
 #endif

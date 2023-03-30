@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/29 18:22:35 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/30 20:13:25 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -117,6 +117,8 @@ SANI 	:= -fsanitize=address -g3
 CC 		:= gcc
 CFLAGS 	:= -Wall  -Wextra -Werror
 
+CFLAGS	:= $(CFLAGS) $(EFLAGS)
+
 RM 		:= rm -rf
 
 MLXF	:= -I mlx/libmlx.a -Imlx -Lmlx -lmlx -framework OpenGL -framework AppKit
@@ -137,7 +139,7 @@ $(NAME) : $(OBJ)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 sani: fclean
-	$(MAKE) CFLAGS='$(CFLAGS) $(SANI)' all
+	$(MAKE) EFLAGS='$(CFLAGS) $(SANI)' all
 
 flagless:
 	$(MAKE) CFLAGS='' all
