@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:41:04 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 18:44:48 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/30 23:47:17 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,13 @@ int	strange_id(char	*path)
 	{
 		if (valid_id(line))
 			i++;
-		else if (*line && *line != '\n')
-			if (i < 6)
-			{
-				printf("linea extraña:\n%s\n", line);
-				free(line);
-				close(fd);
-				return (1);
-			}
+		else if (*line && *line != '\n' && i < 6)
+		{
+			printf("linea extraña:\n%s\n", line);
+			free(line);
+			close(fd);
+			return (1);
+		}
 		free(line);
 		line = ft_get_next_line(fd);
 	}
