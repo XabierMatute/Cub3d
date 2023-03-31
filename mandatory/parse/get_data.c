@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:31:34 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 17:26:40 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/31 12:03:29 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-static	char	*parse_raw_data(char *line, int	idlen)
+static char	*parse_raw_data(char *line, int idlen)
 {
 	char	*data;
 
@@ -42,7 +42,7 @@ char	*get_raw_data(char *path, char *id)
 	return (0);
 }
 
-static	char	*parse_data(char *line, int	idlen)
+static char	*parse_data(char *line, int idlen)
 {
 	char	*data;
 	size_t	i;

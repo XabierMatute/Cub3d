@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/30 22:35:56 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/31 12:18:37 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,13 +53,15 @@ int		are_all_inrange(char **ss);
 int		strange_id(char	*path);
 int		invalidchar_map(char **map);
 size_t	players_map(char **map);
-int		closed_map(char **map); 
+int		closed_map(char **map);
 
 /* ------------------- PARSE ---------------------*/
 char	*get_raw_data(char *path, char *id);
 char	*get_data(char *path, char *id);
 char	**get_raw_map(char *path);
 char	**get_map(char *path);
+int		map_open(char *path);
+size_t	map_height(int fd);
 
 /* ------------------- INIT ---------------------*/
 
@@ -95,9 +97,5 @@ int		map_error(char *path);
 int		map_invalidchar_error(void);
 int		players_error(size_t n);
 int		map_close_error(void);
-
-
-
-int	printmap(char **args);
 
 #endif

@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strange_id.c                                       :+:      :+:    :+:   */
+/*   map_open.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/28 17:41:04 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:01:03 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/31 11:52:10 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/03/31 12:19:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-int	valid_id(char	*line)
-{
-	if (!ft_strncmp(line, "NO", ft_strlen("NO")))
-		return (1);
-	if (!ft_strncmp(line, "SO", ft_strlen("SO")))
-		return (1);
-	if (!ft_strncmp(line, "EA", ft_strlen("EA")))
-		return (1);
-	if (!ft_strncmp(line, "WE", ft_strlen("WE")))
-		return (1);
-	if (!ft_strncmp(line, "F", ft_strlen("F")))
-		return (1);
-	if (!ft_strncmp(line, "C", ft_strlen("C")))
-		return (1);
-	return (0);
-}
-
-int	strange_id(char	*path)
+static int	map_start(char *path)
 {
 	int		fd;
 	char	*line;
 	size_t	i;
+	size_t	s;
 
+	s = 0;
 	i = 0;
 	fd = open(path, O_RDONLY);
 	line = ft_get_next_line(fd);
@@ -42,16 +27,31 @@ int	strange_id(char	*path)
 	{
 		if (valid_id(line))
 			i++;
-		else if (*line && *line != '\n' && i < 6)
+		else if (i == 6 && *line != '\n')
 		{
-			printf("linea extraña:\n%s\n", line);
 			free(line);
-			close(fd);
-			return (1);
+			return (close(fd), s - 1);
 		}
 		free(line);
 		line = ft_get_next_line(fd);
+		s++;
 	}
-	close(fd);
-	return (0);
+	return (close(fd), s);
+}
+
+int	map_open(char *path)
+{
+	int		fd;
+	char	*line;
+	size_t	s;
+
+	s = map_start(path);
+	fd = open(path, O_RDONLY);
+	line = ft_get_next_line(fd);
+	while (s--)
+	{
+		free(line);
+		line = ft_get_next_line(fd);
+	}
+	return (fd);
 }

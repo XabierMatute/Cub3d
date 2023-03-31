@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/30 20:13:25 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/03/31 12:07:59 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,6 +77,8 @@ SRC :=	main.c							\
 		checkinput/closed_map.c			\
 		parse/get_data.c				\
 		parse/get_map.c					\
+		parse/get_raw_map.c					\
+		parse/map_open.c				\
 		checkinput/are_num.c			\
 		utils/ft_get_next_line.c		\
 		utils/ft_free2.c				\
@@ -115,7 +117,7 @@ OBJ := $(SRC:%.c=%.o)
 SANI 	:= -fsanitize=address -g3
 
 CC 		:= gcc
-CFLAGS 	:= -Wall  -Wextra -Werror
+CFLAGS 	:= -Wall -Wextra -Werror
 
 CFLAGS	:= $(CFLAGS) $(EFLAGS)
 
@@ -128,8 +130,7 @@ all : $(NAME)
 $(NAME) : $(OBJ)
 	make -C libft
 	@echo "$(GREEN)libft compiled...$(WHITE)"
-	$(MAKE) -C mlx 2> logs
-	$(RM) logs
+	$(MAKE) -C mlx 2> /dev/null
 	@echo "$(GREEN)MLX compiled...$(WHITE)"
 	$(CC) $(CFLAGS) $(MLXF) ./libft/libft.a $(OBJ) -o $(NAME)
 	@echo "$(GREEN)Cub3d compiled...$(WHITE)"
@@ -138,8 +139,8 @@ $(NAME) : $(OBJ)
 %.o: %.c $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-sani: fclean
-	$(MAKE) EFLAGS='$(CFLAGS) $(SANI)' all
+sani:
+	$(MAKE) EFLAGS='$(SANI)' all
 
 flagless:
 	$(MAKE) CFLAGS='' all
@@ -154,7 +155,7 @@ commit:
 
 test: all
 	./Cub3d test.cub
-	
+
 clean : 
 		$(RM) $(OBJ)
 		make clean -C libft
