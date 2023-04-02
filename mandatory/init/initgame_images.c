@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:16:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:24:59 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:54:32 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 t_texture	*get_texture(void *mlx, char *path, char *id)
 {
 	t_texture	*texture;
+	char		*data;
 	int			*w;
 	int			*h;
 
 	texture = ft_calloc(sizeof(t_texture), 1);
 	w = &((texture->dimention)[x]);
 	h = &(texture->dimention[y]);
-	texture->image = mlx_xpm_file_to_image(mlx, get_data(path, id), w, h);
+	data = get_data(path, id);
+	texture->image = mlx_xpm_file_to_image(mlx, data, w, h);
+	free(data);
 	if (!texture->image)
 	{
 		printf("💀Error con la textura \"%s\"\n", id);
@@ -34,9 +37,11 @@ t_texture	*get_texture(void *mlx, char *path, char *id)
 
 t_game	*initgame_images(t_game *game, char *path)//pro
 {
-	game->no_texture = get_texture(game->mlx, path, "NO");	
+	game->no_texture = get_texture(game->mlx, path, "NO");
 	game->ea_texture = get_texture(game->mlx, path, "EA");
 	game->so_texture = get_texture(game->mlx, path, "SO");
 	game->we_texture = get_texture(game->mlx, path, "WE");
+	if (!game->no_texture || !game->ea_texture ||  !game->ea_texture || !game->we_texture)
+		endgame(game);
 	return (game);
 }
