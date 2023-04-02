@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:18:23 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:09:01 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 # include <math.h>
 # include "./libft/libft.h"
 # include "./mlx/mlx.h"
-
 
 # define WIN_WIDTH			600
 # define WIN_HEIGHT			600
@@ -45,7 +44,6 @@ enum {
 	angle,
 };
 
-
 typedef struct s_texture{
 	void	*image;
 	int		dimention[2];
@@ -63,8 +61,6 @@ typedef struct s_game{
 	char		**map;
 	double		player[3];
 }	t_game;
-
-
 
 int		cubed(t_game	*input);
 

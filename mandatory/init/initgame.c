@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:51:26 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:21:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:12:16 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_game	*initgame(char *path)
 
 	game = ft_calloc(1, sizeof(t_game));
 	if (!game)
-		return(printf("❗️Error de memoria parsear el input\n"), NULL);
+		return (printf("❗️Error de memoria parsear el input\n"), NULL);
 	initgame_mlx(game);
 	initgame_window(game);
 	initgame_images(game, path);

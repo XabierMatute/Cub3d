@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:31:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:02:42 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 19:10:35 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-void	initplayer(double	player[3], char c, double i, double j)
+void	initplayer(double player[3], char c, double i, double j)
 {
 	player[x] = i;
 	player[y] = j;
@@ -42,7 +42,7 @@ t_game	*initgame_player(t_game *game, char *path)
 			if (is_player(map[i][j]))
 			{
 				initplayer(game->player, map[i][j], i, j);
-				break;
+				break ;
 			}
 			j++;
 		}
