@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:10:19 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/25 19:57:34 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/31 12:35:48 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_get_next_line(int fd)
 
 	rd = 1;
 	i = 0;
-	buf = (char *)malloc(sizeof(char) * 1);
+	buf = (char *)smalloc(sizeof(char) * 1);
 	buf[0] = '\0';
 	while (rd > 0)
 	{
