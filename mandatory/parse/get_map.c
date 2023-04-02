@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:23:56 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:07:37 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/31 12:35:31 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*parse_line(char *raw_line, size_t	width)
 	size_t	i;
 
 	i = 0;
-	parsed_line = malloc((width + 1) * sizeof(char));
+	parsed_line = smalloc((width + 1) * sizeof(char));
 	while (raw_line[i])
 	{
 		parsed_line[i] = parsed_char(raw_line[i]);
@@ -90,7 +90,7 @@ char	**get_map(char *path)
 	width = map_width(map_open(path));
 	fd = map_open(path);
 	i = 0;
-	map = malloc((height + 1) * sizeof(char *));
+	map = smalloc((height + 1) * sizeof(char *));
 	while (i < height)
 	{
 		map[i] = parse_line(ft_get_next_line(fd), width);

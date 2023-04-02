@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/03/31 12:07:59 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/02 18:04:21 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,6 +60,7 @@ export CUBE
 NAME := cub3D
 
 SRC :=	main.c							\
+		cubed.c							\
 		checkinput/validinput.c			\
 		checkinput/validextension.c		\
 		checkinput/readable.c			\
@@ -74,15 +75,25 @@ SRC :=	main.c							\
 		checkinput/strange_id.c			\
 		checkinput/invalidchar_map.c	\
 		checkinput/players_map.c		\
+		checkinput/are_num.c			\
 		checkinput/closed_map.c			\
 		parse/get_data.c				\
 		parse/get_map.c					\
-		parse/get_raw_map.c					\
+		parse/get_raw_map.c				\
+		parse/get_color.c				\
 		parse/map_open.c				\
-		checkinput/are_num.c			\
+		init/initgame.c					\
+		init/initgame_mlx.c				\
+		init/initgame_window.c			\
+		init/initgame_images.c			\
+		init/initgame_colors.c			\
+		init/initgame_player.c			\
+		init/initgame_map.c				\
 		utils/ft_get_next_line.c		\
 		utils/ft_free2.c				\
 		utils/ft_args_lenght.c			\
+		utils/smalloc.c					\
+		end/endgame.c					\
 		errors/argc_error.c				\
 		errors/extension_error.c		\
 		errors/read_error.c				\

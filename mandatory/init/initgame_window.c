@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   initgame_window.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/31 19:35:49 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 13:14:11 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+t_game	*initgame_window(t_game *game)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
-
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
+	game->window = mlx_new_window(game->mlx, WIN_WIDTH, WIN_HEIGHT, WIN_TITLE);
+	if (!(game->window))
 	{
-		map[i] = ft_get_next_line(fd);
-		i++;
+		printf("❗️Error al crear la ventana\n");
+		endgame(game);
 	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+	return (game);
 }

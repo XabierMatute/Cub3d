@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   get_color.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/04/02 13:37:00 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 16:50:02 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+int	rgbtoint(int r, int g, int b)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
+	return(b + g * 256 + r * 256 * 256);
+}
 
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
-	{
-		map[i] = ft_get_next_line(fd);
-		i++;
-	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+int	get_color(char *path, char *id)
+{
+	char	*data;
+	char	**rgb;
+	int		color;
+
+	data = get_data(path, id);
+	rgb = ft_split(data, ',');
+	free(data);
+	color = rgbtoint(ft_atoi(rgb[R]), ft_atoi(rgb[G]), ft_atoi(rgb[B]));
+	ft_free2((void **)rgb);
+	return(color);	
 }

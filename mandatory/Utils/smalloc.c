@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   smalloc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/31 12:30:31 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/03/31 12:34:00 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+void	*smalloc(size_t	size)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
+	void	*p;
 
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
+	p = malloc(size);
+	if (!p)
 	{
-		map[i] = ft_get_next_line(fd);
-		i++;
+		perror("malloc: ");
+		exit(1);
 	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+	return (p);
 }

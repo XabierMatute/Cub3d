@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:06:05 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/30 23:09:34 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/03/31 20:07:33 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ int	main(int argc, char *argv[])
 		return (argc_error(argc));
 	if (!validinput(argv[1]))
 		return (1);
-	// return (cub3d(parse(argv[1])));
+	return (cubed(initgame(argv[1])));
 	return (0);
 }

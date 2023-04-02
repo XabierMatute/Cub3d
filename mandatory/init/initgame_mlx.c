@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   initgame_mlx.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/31 19:35:49 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/03/31 20:05:23 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+t_game	*initgame_mlx(t_game *game)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
-
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
+	game->mlx = mlx_init();
+	if (!(game->mlx))
 	{
-		map[i] = ft_get_next_line(fd);
-		i++;
+		printf("❗️Error al iniciar la mlx\n");
+		endgame(game);
 	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+	return (game);
 }

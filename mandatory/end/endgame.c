@@ -1,34 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   endgame.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/31 19:57:24 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 13:47:43 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+int	endgame(t_game	*game)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
-
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
-	{
-		map[i] = ft_get_next_line(fd);
-		i++;
-	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+	free(game);
+	return (0);
 }

@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   initgame_colors.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/04/02 13:30:23 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 13:36:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+t_game	*initgame_colors(t_game *game, char *path)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
-
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
-	{
-		map[i] = ft_get_next_line(fd);
-		i++;
-	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+	game->c_color = get_color(path, "C");
+	game->f_color = get_color(path, "F");
+	return (game);
 }

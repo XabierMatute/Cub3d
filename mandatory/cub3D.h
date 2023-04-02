@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:18:37 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:04:07 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,21 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <fcntl.h>
+# include <math.h>
 # include "./libft/libft.h"
+# include "./mlx/mlx.h"
+
+
+# define WIN_WIDTH			600
+# define WIN_HEIGHT			600
+# define WIN_TITLE			"CUB3D"
+
+# define WIN_WIDTH			600
+
+# define NORTH				M_PI / 2
+# define EAST				NORTH - M_PI / 2
+# define WEST				NORTH + M_PI / 2
+# define SOUTH				NORTH + M_PI
 
 enum {
 	R,
@@ -25,15 +39,34 @@ enum {
 	B,
 };
 
+enum {
+	x,
+	y,
+	angle,
+};
+
+
+typedef struct s_texture{
+	void	*image;
+	int		dimention[2];
+}	t_texture;
+
 typedef struct s_game{
-	void	*no_texture;
-	void	*ea_texture;
-	void	*so_texture;
-	void	*we_texture;
-	char	f_color[3];
-	char	c_color[3];
-	char	**map;
+	void		*mlx;
+	void		*window;
+	t_texture	*no_texture;
+	t_texture	*ea_texture;
+	t_texture	*so_texture;
+	t_texture	*we_texture;
+	int			f_color;
+	int			c_color;
+	char		**map;
+	double		player[3];
 }	t_game;
+
+
+
+int		cubed(t_game	*input);
 
 /* ------------------- CHECKINPUT ---------------------*/
 int		validinput(char *path);
@@ -56,14 +89,23 @@ size_t	players_map(char **map);
 int		closed_map(char **map);
 
 /* ------------------- PARSE ---------------------*/
+t_game	*parse(char *path);
 char	*get_raw_data(char *path, char *id);
 char	*get_data(char *path, char *id);
 char	**get_raw_map(char *path);
 char	**get_map(char *path);
 int		map_open(char *path);
 size_t	map_height(int fd);
+int		get_color(char *path, char *id);
 
 /* ------------------- INIT ---------------------*/
+t_game	*initgame(char *path);
+t_game	*initgame_mlx(t_game *game);
+t_game	*initgame_window(t_game *game);
+t_game	*initgame_colors(t_game *game, char *path);
+t_game	*initgame_images(t_game *game, char *path);
+t_game	*initgame_player(t_game *game, char *path);
+t_game	*initgame_map(t_game *game, char *path);
 
 /* ------------------- UTILS ---------------------*/
 char	*ft_get_next_line(int fd);
@@ -72,8 +114,10 @@ int		ft_args_lenght(char **args);
 int		valid_id(char	*line);
 int		is_player(char c);
 int		is_void(char c);
+void	*smalloc(size_t	size);
 
 /* ------------------- END ---------------------*/
+int		endgame(t_game	*game);
 
 /* ------------------- ERRORS ---------------------*/
 int		argc_error(int argc);

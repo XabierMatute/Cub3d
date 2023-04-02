@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_raw_map.c                                      :+:      :+:    :+:   */
+/*   initgame.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 12:07:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:36 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/03/31 18:51:26 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 18:03:53 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-char	**get_raw_map(char *path)
+t_game	*initgame(char *path)
 {
-	int		fd;
-	size_t	height;
-	size_t	i;
-	char	**map;
+	t_game	*game;
 
-	height = map_height(map_open(path));
-	fd = map_open(path);
-	i = 0;
-	map = smalloc((height + 1) * sizeof(char *));
-	while (i < height)
-	{
-		map[i] = ft_get_next_line(fd);
-		i++;
-	}
-	map[i] = NULL;
-	close(fd);
-	return (map);
+	game = ft_calloc(1, sizeof(t_game));
+	if (!game)
+		return(printf("❗️Error de memoria parsear el input\n"), NULL);
+	initgame_mlx(game);
+	initgame_window(game);
+	initgame_images(game, path);
+	initgame_colors(game, path);
+	initgame_player(game, path);
+	initgame_map(game, path);
+	return (game);
 }
