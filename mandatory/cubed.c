@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:07:14 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:17:07 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ int	cubed(t_game	*game)
 	put_floor(game->mlx, game->window, game->f_color);
 	put_ceiling(game->mlx, game->window, game->c_color);
 	mlx_put_image_to_window(game->mlx, game->window, game->ea_texture->image, 0, 0);
-	ft_print_map(game->map);
 	mlx_loop(game->mlx);
-
-	return (0);
+	return (endgame(game));
 }

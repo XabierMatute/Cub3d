@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:04:07 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:18:23 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,11 @@ int		valid_id(char	*line);
 int		is_player(char c);
 int		is_void(char c);
 void	*smalloc(size_t	size);
+void	ft_free(void *p);
 
 /* ------------------- END ---------------------*/
 int		endgame(t_game	*game);
+void	endgame_images(t_game *game);
 
 /* ------------------- ERRORS ---------------------*/
 int		argc_error(int argc);

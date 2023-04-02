@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   endgame.c                                          :+:      :+:    :+:   */
+/*   endgame_images.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 19:57:24 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:19:37 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/04/02 18:12:30 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 18:18:40 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-void	ft_free(void *p)
+void	free_texture(t_texture	*texture)
 {
-	if (p)
-	{
-		free(p);
-		p = NULL;
-	}
+	if (!texture)
+		return;
+	ft_free(texture->image);
+	ft_free(texture);
 }
 
-int	endgame(t_game	*game)
+void	endgame_images(t_game *game)
 {
-	ft_free(game->map);
-	endgame_images(game);
-	ft_free(game->window);
-	ft_free(game->mlx);
-	ft_free(game);
-	exit(0);
+	free_texture(game->no_texture);
+	free_texture(game->ea_texture);
+	free_texture(game->so_texture);
+	free_texture(game->we_texture);
 }
