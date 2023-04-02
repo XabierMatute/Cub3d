@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   initgame_window.c                                  :+:      :+:    :+:   */
+/*   valid_id.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/31 19:35:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:25:22 by xmatute-         ###   ########.fr       */
+/*   Created: 2023/04/02 18:49:57 by xmatute-          #+#    #+#             */
+/*   Updated: 2023/04/02 18:50:15 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-t_game	*initgame_window(t_game *game)
+int	valid_id(char	*line)
 {
-	game->window = mlx_new_window(game->mlx, WIN_WIDTH, WIN_HEIGHT, WIN_TITLE);
-	if (!(game->window))
-	{
-		printf("❗️Error al crear la ventana\n");
-		endgame(game);
-	}
-	return (game);
+	if (!ft_strncmp(line, "NO", ft_strlen("NO")))
+		return (1);
+	if (!ft_strncmp(line, "SO", ft_strlen("SO")))
+		return (1);
+	if (!ft_strncmp(line, "EA", ft_strlen("EA")))
+		return (1);
+	if (!ft_strncmp(line, "WE", ft_strlen("WE")))
+		return (1);
+	if (!ft_strncmp(line, "F", ft_strlen("F")))
+		return (1);
+	if (!ft_strncmp(line, "C", ft_strlen("C")))
+		return (1);
+	return (0);
 }

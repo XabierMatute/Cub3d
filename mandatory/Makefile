@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/02 18:18:05 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/02 18:50:33 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,6 +93,9 @@ SRC :=	main.c							\
 		utils/ft_free2.c				\
 		utils/ft_args_lenght.c			\
 		utils/smalloc.c					\
+		utils/is_player.c				\
+		utils/is_void.c					\
+		utils/valid_id.c				\
 		end/endgame.c					\
 		end/endgame_images.c			\
 		errors/argc_error.c				\

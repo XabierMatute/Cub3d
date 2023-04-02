@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:37:00 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 16:50:02 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:22:29 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	get_color(char *path, char *id)
 	free(data);
 	color = rgbtoint(ft_atoi(rgb[R]), ft_atoi(rgb[G]), ft_atoi(rgb[B]));
 	ft_free2((void **)rgb);
-	return(color);	
+	return (color);	
 }

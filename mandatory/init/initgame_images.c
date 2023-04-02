@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:16:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 17:24:36 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:24:59 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_texture	*get_texture(void *mlx, char *path, char *id)
 
 t_game	*initgame_images(t_game *game, char *path)//pro
 {
-	game->no_texture = get_texture(game->mlx, path, "NO");
+	game->no_texture = get_texture(game->mlx, path, "NO");	
 	game->ea_texture = get_texture(game->mlx, path, "EA");
 	game->so_texture = get_texture(game->mlx, path, "SO");
 	game->we_texture = get_texture(game->mlx, path, "WE");
