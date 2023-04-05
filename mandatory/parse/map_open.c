@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:52:10 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:19:19 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 14:58:50 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	map_start(char *path)
 
 	s = 0;
 	i = 0;
-	fd = open(path, O_RDONLY);
+	fd = sopen(path, O_RDONLY);
 	line = ft_get_next_line(fd);
 	while (line)
 	{
@@ -30,13 +30,13 @@ static int	map_start(char *path)
 		else if (i == 6 && *line != '\n')
 		{
 			free(line);
-			return (close(fd), s - 1);
+			return (sclose(fd), s - 1);
 		}
 		free(line);
 		line = ft_get_next_line(fd);
 		s++;
 	}
-	return (close(fd), s);
+	return (sclose(fd), s);
 }
 
 int	map_open(char *path)
@@ -46,7 +46,7 @@ int	map_open(char *path)
 	size_t	s;
 
 	s = map_start(path);
-	fd = open(path, O_RDONLY);
+	fd = sopen(path, O_RDONLY);
 	line = ft_get_next_line(fd);
 	while (s--)
 	{

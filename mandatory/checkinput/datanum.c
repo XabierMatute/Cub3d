@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:47:36 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/25 20:17:41 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 14:57:42 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	datanum(char *path, char *id)
 	int		n;
 
 	n = 0;
-	fd = open(path, O_RDONLY);
+	fd = sopen(path, O_RDONLY);
 	line = ft_get_next_line(fd);
 	while (line)
 	{
@@ -28,6 +28,6 @@ int	datanum(char *path, char *id)
 		free(line);
 		line = ft_get_next_line(fd);
 	}
-	close(fd);
+	sclose(fd);
 	return (n);
 }

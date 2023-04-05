@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:31:34 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:03:29 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 14:58:33 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,19 +26,19 @@ char	*get_raw_data(char *path, char *id)
 	int		fd;
 	char	*line;
 
-	fd = open(path, O_RDONLY);
+	fd = sopen(path, O_RDONLY);
 	line = ft_get_next_line(fd);
 	while (line)
 	{
 		if (!ft_strncmp(line, id, ft_strlen(id)))
 		{
-			close(fd);
+			sclose(fd);
 			return (parse_raw_data(line, ft_strlen(id)));
 		}
 		free(line);
 		line = ft_get_next_line(fd);
 	}
-	close(fd);
+	sclose(fd);
 	return (0);
 }
 
@@ -64,18 +64,18 @@ char	*get_data(char *path, char *id)
 	int		fd;
 	char	*line;
 
-	fd = open(path, O_RDONLY);
+	fd = sopen(path, O_RDONLY);
 	line = ft_get_next_line(fd);
 	while (line)
 	{
 		if (!ft_strncmp(line, id, ft_strlen(id)))
 		{
-			close(fd);
+			sclose(fd);
 			return (parse_data(line, ft_strlen(id)));
 		}
 		free(line);
 		line = ft_get_next_line(fd);
 	}
-	close(fd);
+	sclose(fd);
 	return (0);
 }

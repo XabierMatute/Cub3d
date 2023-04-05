@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 19:09:01 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 15:01:49 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,12 @@ t_game	*initgame_images(t_game *game, char *path);
 t_game	*initgame_player(t_game *game, char *path);
 t_game	*initgame_map(t_game *game, char *path);
 
+/* ------------------- S_CALL ---------------------*/
+void	*smalloc(size_t	size);
+int		sclose(int	fd);
+int		sopen(char	*path, int flag);
+ssize_t	sread(int fd, void *buf, size_t b);
+
 /* ------------------- UTILS ---------------------*/
 char	*ft_get_next_line(int fd);
 void	ft_free2(void **arr);
@@ -110,7 +116,6 @@ int		ft_args_lenght(char **args);
 int		valid_id(char	*line);
 int		is_player(char c);
 int		is_void(char c);
-void	*smalloc(size_t	size);
 void	ft_free(void *p);
 
 /* ------------------- END ---------------------*/

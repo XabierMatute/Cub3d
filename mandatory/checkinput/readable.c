@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 18:26:16 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/21 20:00:25 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 14:59:17 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	readable(char *path)
 		return (0);
 	}
 	r = read(fd, s, 42);
-	close(fd);
+	sclose(fd);
 	if (r < 0)
 	{
 		perror("read");

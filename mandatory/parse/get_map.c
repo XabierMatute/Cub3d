@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 19:23:56 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/31 12:35:31 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 14:57:01 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ size_t	map_height(int fd)
 		free(line);
 		line = ft_get_next_line(fd);
 	}
-	close(fd);
+	sclose(fd);
 	return (height);
 }
 
@@ -43,7 +43,7 @@ size_t	map_width(int fd)
 		free(line);
 		line = ft_get_next_line(fd);
 	}
-	close(fd);
+	sclose(fd);
 	return (width);
 }
 
@@ -97,6 +97,6 @@ char	**get_map(char *path)
 		i++;
 	}
 	map[i] = 0;
-	close(fd);
+	sclose(fd);
 	return (map);
 }

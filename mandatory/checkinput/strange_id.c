@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 17:41:04 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 18:50:18 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 14:57:50 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	strange_id(char	*path)
 	size_t	i;
 
 	i = 0;
-	fd = open(path, O_RDONLY);
+	fd = sopen(path, O_RDONLY);
 	line = ft_get_next_line(fd);
 	while (line)
 	{
@@ -29,12 +29,12 @@ int	strange_id(char	*path)
 		{
 			printf("linea extraña:\n%s\n", line);
 			free(line);
-			close(fd);
+			sclose(fd);
 			return (1);
 		}
 		free(line);
 		line = ft_get_next_line(fd);
 	}
-	close(fd);
+	sclose(fd);
 	return (0);
 }
