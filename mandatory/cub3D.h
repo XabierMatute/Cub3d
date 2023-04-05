@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 19:06:51 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:24:10 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,11 @@
 # define WEST				NORTH + M_PI / 2
 # define SOUTH				NORTH + M_PI
 
+# define ROTATE_SPEED		0.1
 # define MOVE_SPEED			0.50
 # define BASEBOARD			0.10
 
-# define MM_TILE_SIZE		5
+# define MM_TILE_SIZE		1
 
 enum{
 	A_KEY = 0,
@@ -122,8 +123,8 @@ int		move_left(t_game *game);
 int		move_right(t_game *game);
 int		move_back(t_game *game);
 int		move_forward(t_game *game);
-
-
+int		look_left(t_game *game);
+int		look_right(t_game *game);
 
 /* ------------------- S_CALL ---------------------*/
 void	*smalloc(size_t	size);

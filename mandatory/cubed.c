@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 19:06:00 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:17:42 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,10 @@ int	putminimap(t_game *game, char **map, double player[3])
 
 int	key_hook(int k, t_game *game)
 {
-	// if (k == LEFT_KEY)
-	// 	look_left(game);
-	// if (k == RIGHT_KEY)
-	// 	look_right(game);
+	if (k == LEFT_KEY)
+		look_left(game);
+	if (k == RIGHT_KEY)
+		look_right(game);
 	if (k == W_KEY)
 		move_forward(game);
 	if (k == A_KEY)

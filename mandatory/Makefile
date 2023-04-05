@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/05 18:35:00 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/05 19:22:32 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -90,6 +90,7 @@ SRC :=	main.c							\
 		init/initgame_player.c			\
 		init/initgame_map.c				\
 		movement/move.c					\
+		movement/look.c					\
 		s_calls/sclose.c				\
 		s_calls/smalloc.c				\
 		s_calls/sopen.c					\

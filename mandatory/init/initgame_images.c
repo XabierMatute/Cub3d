@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:16:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 19:13:12 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 20:05:12 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_game	*initgame_images(t_game *game, char *path)
 	game->so_texture = get_texture(game->mlx, path, "SO");
 	game->we_texture = get_texture(game->mlx, path, "WE");
 	if (!game->no_texture || !game->ea_texture
-		|| !game->ea_texture || !game->we_texture)
+		|| !game->so_texture || !game->we_texture)//aqui no sales?
 		endgame(game);
 	return (game);
 }

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 14:31:34 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 14:58:33 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 20:08:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ static char	*parse_data(char *line, int idlen)
 	while (line[i] == ' ')
 		i++;
 	f = i;
-	while (line[f] && line[f] != ' ' && line[f] != '\n')
+	while (line[f] && line[f] != '\n')
 		f++;
+	while (line[f - 1] == '\n' || line[f - 1] == ' ')
+		f--;
 	data = ft_substr(line, i, f - i);
 	free(line);
 	return (data);

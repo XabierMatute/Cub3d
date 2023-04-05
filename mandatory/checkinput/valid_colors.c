@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:59:48 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/28 17:39:17 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 20:13:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,11 @@ int	valid_colors(char *path, char	*id)
 	size_t	c;
 
 	data = get_data(path, id);
+	printf("%s: %s\n", id, data);
 	if (double_coma(data))
 		return (free(data), double_coma_error(id));
+	if (data[0] == ',' || data[ft_strlen(data) - 1] == ',')
+		return (free(data), printf("❌Error: hay alguna coma suelta\n"), 0);
 	color = ft_split(data, ',');
 	free(data);
 	c = ft_args_lenght(color);
