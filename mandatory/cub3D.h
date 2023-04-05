@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 15:01:49 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 18:23:18 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@
 # define EAST				NORTH - M_PI / 2
 # define WEST				NORTH + M_PI / 2
 # define SOUTH				NORTH + M_PI
+
+# define MOVE_SPEED			0.10
+# define BASEBOARD			0.10
+
+enum{
+	A_KEY = 0,
+	S_KEY = 1,
+	D_KEY = 2,
+	W_KEY = 13,
+	LEFT_KEY = 123,
+	RIGHT_KEY = 124,
+	ESC_KEY = 53,
+};
 
 enum {
 	R,
@@ -102,6 +115,15 @@ t_game	*initgame_colors(t_game *game, char *path);
 t_game	*initgame_images(t_game *game, char *path);
 t_game	*initgame_player(t_game *game, char *path);
 t_game	*initgame_map(t_game *game, char *path);
+
+/* ------------------- MOVEMENT ---------------------*/
+int		move_forward(t_game *game);
+int		move_left(t_game *game);
+int		move_right(t_game *game);
+int		move_back(t_game *game);
+int		move_forward(t_game *game);
+
+
 
 /* ------------------- S_CALL ---------------------*/
 void	*smalloc(size_t	size);

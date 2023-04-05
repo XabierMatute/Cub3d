@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/05 15:00:25 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/05 18:35:00 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,6 +89,7 @@ SRC :=	main.c							\
 		init/initgame_colors.c			\
 		init/initgame_player.c			\
 		init/initgame_map.c				\
+		movement/move.c					\
 		s_calls/sclose.c				\
 		s_calls/smalloc.c				\
 		s_calls/sopen.c					\
@@ -170,6 +171,7 @@ commit:
 	git add $(SRC) $(HEADER) ./Makefile
 	git commit -m "commit general"
 	git push
+	git status
 
 test: all
 	./Cub3d test.cub
