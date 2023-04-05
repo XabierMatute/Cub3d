@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 18:23:18 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/05 19:06:51 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,19 @@
 # include "./libft/libft.h"
 # include "./mlx/mlx.h"
 
-# define WIN_WIDTH			600
+# define WIN_WIDTH			1600
 # define WIN_HEIGHT			600
 # define WIN_TITLE			"CUB3D"
-
-# define WIN_WIDTH			600
 
 # define NORTH				M_PI / 2
 # define EAST				NORTH - M_PI / 2
 # define WEST				NORTH + M_PI / 2
 # define SOUTH				NORTH + M_PI
 
-# define MOVE_SPEED			0.10
+# define MOVE_SPEED			0.50
 # define BASEBOARD			0.10
+
+# define MM_TILE_SIZE		5
 
 enum{
 	A_KEY = 0,
