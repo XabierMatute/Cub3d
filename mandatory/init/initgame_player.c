@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:31:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 19:14:20 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/08 18:18:13 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ void	initplayer(double player[3], char c, double i, double j)
 	if (c == 'N')
 		player[angle] = NORTH;
 	if (c == 'E')
-		player[angle] = EAST;
+		player[angle] = NORTH - M_PI / 2;
 	if (c == 'W')
-		player[angle] = WEST;
+		player[angle] = NORTH + M_PI / 2;
 	if (c == 'S')
-		player[angle] = SOUTH;
+		player[angle] = NORTH + M_PI;
 }
 
 t_game	*initgame_player(t_game *game, char *path)

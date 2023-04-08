@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 19:24:10 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/08 18:18:47 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@
 # define WIN_HEIGHT			600
 # define WIN_TITLE			"CUB3D"
 
-# define NORTH				M_PI / 2
-# define EAST				NORTH - M_PI / 2
-# define WEST				NORTH + M_PI / 2
-# define SOUTH				NORTH + M_PI
+# define NORTH				M_PI_2		
 
 # define ROTATE_SPEED		0.1
 # define MOVE_SPEED			0.50
@@ -128,7 +125,7 @@ int		look_right(t_game *game);
 
 /* ------------------- S_CALL ---------------------*/
 void	*smalloc(size_t	size);
-int		sclose(int	fd);
+int		sclose(int fd);
 int		sopen(char	*path, int flag);
 ssize_t	sread(int fd, void *buf, size_t b);
 

@@ -6,13 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 12:30:31 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 15:01:11 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/08 18:20:26 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-int	sclose(int	fd)
+int	sclose(int d)
 {
 	int	i;
 
