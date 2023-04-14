@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:59:48 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 20:13:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:12:16 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3D.h"
+#include "../cub3d.h"
 
 static int	double_coma(char *s)
 {
@@ -38,7 +38,7 @@ int	valid_colors(char *path, char	*id)
 		return (free(data), printf("❌Error: hay alguna coma suelta\n"), 0);
 	color = ft_split(data, ',');
 	free(data);
-	c = ft_args_lenght(color);
+	c = ft_args_len(color);
 	if (c != 3)
 		return (ft_free2((void **)color), color_c_error(c));
 	if (!are_all_num(color))

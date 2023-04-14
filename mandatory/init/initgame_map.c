@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:32:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 19:13:28 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3D.h"
+#include "../cub3d.h"
 
 t_game	*initgame_map(t_game *game, char *path)
 {

@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:51:20 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/03/30 23:10:45 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3D.h"
+#include "../cub3d.h"
 
 int	have_emptyline(char **map)
 {

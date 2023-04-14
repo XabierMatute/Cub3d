@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:10:19 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 14:59:27 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3D.h"
+#include "../cub3d.h"
 
 static	char	*ft_check_str(char *str)
 {

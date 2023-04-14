@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/14 16:27:17 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/14 19:19:34 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,10 +97,12 @@ SRC :=	main.c							\
 		s_calls/sread.c					\
 		utils/ft_get_next_line.c		\
 		utils/ft_free2.c				\
-		utils/ft_args_lenght.c			\
+		utils/ft_args_len.c			\
 		utils/is_player.c				\
 		utils/is_void.c					\
 		utils/valid_id.c				\
+		utils/ft_manage_imgs.c				\
+		utils/ft_save_map.c				\
 		end/endgame.c					\
 		end/endgame_images.c			\
 		errors/argc_error.c				\
@@ -122,9 +124,20 @@ SRC :=	main.c							\
 		errors/map_invalidchar_error.c	\
 		errors/players_error.c			\
 		errors/map_close_error.c		\
+		raycasting/ft_horizontal_colisions.c \
+		raycasting/ft_raycasting_aux.c \
+		raycasting/ft_manage_angles.c  \
+		raycasting/ft_vertical_colisions.c \
+		raycasting/ft_raycasting.c \
+		painting/ft_calculate_viewport.c \
+		painting/ft_get_texture_x.c \
+		painting/ft_get_texture_y.c \
+		painting/ft_lightning_gun.c\
+		painting/ft_paint_columns.c\
+		painting/ft_calculate_wall_height.c\
 		
 
-HEADER := cub3D.h
+HEADER := cub3d.h
 		
 WHITE = \033[0;37m
 RED = \033[0;31m

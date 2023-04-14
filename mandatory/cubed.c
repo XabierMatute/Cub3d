@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/14 17:41:32 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:25:18 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "cub3d.h"
 
 void	put_ceiling(void *mlx, void *window, int color)
 {
@@ -118,15 +118,22 @@ int	key_hook(int k, t_game *game)
 		move_right(game);
 	if (k == ESC_KEY)
 		endgame(game);
-	putminimap(game, game->map, game->player);
+	// putminimap(game, game->map, game->player);
 	printf("k:%i x:%f y:%f angle:%f\n",k , game->player[x], game->player[y], game->player[angle]);
+	game->player[x] *= 64;
+	game->player[y] *= 64;
+	ft_lightning_gun(game->map, game->player[angle], game);
+	game->player[x] /= 64;
+	game->player[y] /= 64;
 	return (0);
 }
 
 int	cubed(t_game	*game)
 {
-	put_floor(game->mlx, game->window, game->floor_color);
-	put_ceiling(game->mlx, game->window, game->ceiling_color);
+	// put_floor(game->mlx, game->window, game->floor_color);
+	// put_ceiling(game->mlx, game->window, game->ceiling_color);
+	ft_lightning_gun(game->map, game->player[angle], game);
+
 	mlx_hook(game->window, 2, (1L << 1), key_hook, game);//hay que hacer tambien lo de la x? si
 	// mlx_put_image_to_window(game->mlx, game->window, game->ea_texture->image, 0, 0);
 	mlx_loop(game->mlx);
