@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/14 19:25:18 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:20:07 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	putfloor(t_game *game, char **map)
 
 int	putplayer(t_game *game, double player[3])
 {
-	ft_fat_pixel(game, (int)(MM_TILE_SIZE * player[y]), (int)(MM_TILE_SIZE * player[x]), 16711680);
+	ft_fat_pixel(game, (int)(MM_TILE_SIZE * player[x]), (int)(MM_TILE_SIZE * player[y]), 16711680);
 	// mlx_pixel_put(game->mlx, game->window, (int)floor(player[y]), (int)floor(player[x]), 16711680);
 	return (0);
 }
@@ -118,13 +118,17 @@ int	key_hook(int k, t_game *game)
 		move_right(game);
 	if (k == ESC_KEY)
 		endgame(game);
-	// putminimap(game, game->map, game->player);
 	printf("k:%i x:%f y:%f angle:%f\n",k , game->player[x], game->player[y], game->player[angle]);
 	game->player[x] *= 64;
 	game->player[y] *= 64;
+	// printf("k:%i x:%f y:%f angle:%f\n",k , game->player[x], game->player[y], game->player[angle]);
+
 	ft_lightning_gun(game->map, game->player[angle], game);
+
 	game->player[x] /= 64;
 	game->player[y] /= 64;
+	putminimap(game, game->map, game->player);
+
 	return (0);
 }
 

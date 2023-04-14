@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 17:33:39 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:45:30 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,14 @@ int	move(char **map, double player[3], double angle)
 	double	new_x;
 	double	new_y;
 
-	new_x = player[x] - sin(angle) * MOVE_SPEED;
-	new_y = player[y] + cos(angle) * MOVE_SPEED;
-	if (map[(int)floor((new_x + BASEBOARD))][(int)floor(player[y])] == '0')
+	new_x = player[x] + cos(angle) * MOVE_SPEED;
+	new_y = player[y] - sin(angle) * MOVE_SPEED;
+	printf("map[%i]=%s\n", (int)floor(player[y]), map[(int)floor(player[y])]);
+	printf("map[%i][%i]=%c\n", (int)floor(player[y]), (int)floor((new_x + BASEBOARD)), map[(int)floor(player[y])][(int)floor((new_x + BASEBOARD))]);
+	if (map[(int)floor(player[y])][(int)floor((new_x + BASEBOARD))] == '0' &&
+		map[(int)floor(player[y])][(int)floor((new_x - BASEBOARD))] == '0')
 		player[x] = new_x;
-	if (map[(int)floor(player[x])][(int)floor((new_y + BASEBOARD))] == '0')
+	if (map[(int)floor((new_y + BASEBOARD))][(int)floor(player[x])] == '0')
 		player[y] = new_y;
 	return (0);
 }

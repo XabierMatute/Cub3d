@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/14 19:19:34 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/14 19:52:30 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,7 +150,7 @@ OBJ := $(SRC:%.c=%.o)
 SANI 	:= -fsanitize=address -g3
 
 CC 		:= gcc
-CFLAGS 	:= -Wall -Wextra -Werror
+# CFLAGS 	:= -Wall -Wextra -Werror
 
 CFLAGS	:= $(CFLAGS) $(EFLAGS)
 
@@ -200,6 +200,8 @@ fclean : clean
 		$(RM) $(NAME)
 		@echo "$(RED)fclean done...$(WHITE)"
 
+debug:
+	$(MAKE) EFLAGS='-DDEBUG=0' all
 re : fclean all
 
 .PHONY : all clean fclean re sani flagless normi commit test

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:31:44 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 20:40:19 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	initplayer(double player[3], char c, double i, double j)
 {
-	player[x] = i + 0.5;
-	player[y] = j + 0.5;
+	player[x] = j + 0.5;
+	player[y] = i + 0.5;
 	if (c == 'N')
 		player[angle] = NORTH;
 	if (c == 'E')
