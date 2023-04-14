@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/05 19:17:42 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:41:32 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,8 +125,8 @@ int	key_hook(int k, t_game *game)
 
 int	cubed(t_game	*game)
 {
-	put_floor(game->mlx, game->window, game->f_color);
-	put_ceiling(game->mlx, game->window, game->c_color);
+	put_floor(game->mlx, game->window, game->floor_color);
+	put_ceiling(game->mlx, game->window, game->ceiling_color);
 	mlx_hook(game->window, 2, (1L << 1), key_hook, game);//hay que hacer tambien lo de la x? si
 	// mlx_put_image_to_window(game->mlx, game->window, game->ea_texture->image, 0, 0);
 	mlx_loop(game->mlx);

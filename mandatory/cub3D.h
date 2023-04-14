@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/08 18:18:47 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:41:32 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ typedef struct s_game{
 	t_texture	*ea_texture;
 	t_texture	*so_texture;
 	t_texture	*we_texture;
-	int			f_color;
-	int			c_color;
+	int			floor_color;
+	int			ceiling_color;
 	char		**map;
 	double		player[3];
 }	t_game;

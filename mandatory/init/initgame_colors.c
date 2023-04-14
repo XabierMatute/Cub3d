@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:30:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 13:36:30 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:41:32 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 t_game	*initgame_colors(t_game *game, char *path)
 {
-	game->c_color = get_color(path, "C");
-	game->f_color = get_color(path, "F");
+	game->ceiling_color = get_color(path, "C");
+	game->floor_color = get_color(path, "F");
 	return (game);
 }
