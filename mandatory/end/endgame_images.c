@@ -6,17 +6,18 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:12:30 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/02 19:09:32 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 18:07:10 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3D.h"
 
-void	free_texture(t_texture	*texture)
+void	free_texture(t_img	*texture)
 {
 	if (!texture)
 		return ;
-	ft_free(texture->image);
+	ft_free(texture->mlx_img);
+	ft_free(texture->addr);
 	ft_free(texture);
 }
 

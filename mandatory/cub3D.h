@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/14 17:41:32 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/14 17:54:31 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,24 @@ enum {
 	angle,
 };
 
-typedef struct s_texture{
-	void	*image;
-	int		dimention[2];
-}	t_texture;
+typedef struct s_img
+{
+    void    *mlx_img;
+    char    *addr;
+    int     bpp;
+    int     line_len;
+    int     endian;
+    int     height;
+    int     width;
+}   t_img;
 
 typedef struct s_game{
 	void		*mlx;
 	void		*window;
-	t_texture	*no_texture;
-	t_texture	*ea_texture;
-	t_texture	*so_texture;
-	t_texture	*we_texture;
+	t_img		*no_texture;
+	t_img		*ea_texture;
+	t_img		*so_texture;
+	t_img		*we_texture;
 	int			floor_color;
 	int			ceiling_color;
 	char		**map;
