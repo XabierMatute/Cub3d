@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 13:47:24 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:34:39 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void	*ft_send_height_and_angle(double wall_height, double angle)
 void	ft_lightning_gun(char **map, double angle, t_game *game)
 {
 	int		x;
-	double	wall_height;
 	double	min_angle;
 	double	max_angle;
 	t_img	*img;
 
+	(void)map;
 	ft_calculate_viewport(angle, &min_angle, &max_angle);
 	x = 0;
 	mlx_clear_window(game->mlx, game->window);

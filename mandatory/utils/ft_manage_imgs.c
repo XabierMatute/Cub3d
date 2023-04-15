@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:41:56 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:32:52 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ t_img	*ft_save_xpm(t_game *game, char *path)
 	img = (t_img *)malloc(sizeof(t_img));
 	img->mlx_img = mlx_xpm_file_to_image(game->mlx, path, &img->width, &img->height);
 	img->addr = mlx_get_data_addr(img->mlx_img, &img->bpp, &img->line_len, &img->endian);
+	return(img);
 }
 
 void	ft_edit_img(t_img *img, t_game *game, int x, int wall_height)

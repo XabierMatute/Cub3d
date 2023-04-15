@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:04:14 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/14 19:56:54 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:34:15 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_check_wall(char **map, double ray_x, double ray_y)
 	printf("Y: %d\n", y);
 	#endif
 
-	if (!((0 <= x && x < ft_strlen(map[0])) && (0 <= y && y < ft_args_len(map))))
+	if (!((0 <= x && x < (int)ft_strlen(map[0])) && (0 <= y && y < ft_args_len(map))))
 		return (1);
 	if ('0' < map[y][x] && map[y][x] <= '9')
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/15 14:30:38 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/15 14:32:24 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int	refresh_frame(t_game *game)
 	game->player[x] /= UNIT;
 	game->player[y] /= UNIT;
 	putminimap(game, game->map, game->player);
+	return (0);
 }
 
 int	key_hook(int k, t_game *game)
