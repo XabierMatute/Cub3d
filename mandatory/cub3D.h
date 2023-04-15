@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3D.h                                            :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/14 19:12:17 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:03:32 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,25 +21,28 @@
 # include "./libft/libft.h"
 # include "./mlx/mlx.h"
 
-# define WIN_WIDTH			1600
+# define WIN_WIDTH			1200
 # define WIN_HEIGHT			600
 # define WIN_TITLE			"CUB3D"
 
 # define NORTH				M_PI_2		
 
-# define ROTATE_SPEED		0.1
-# define MOVE_SPEED			0.50
+# define ROTATE_SPEED		0.20
+# define MOVE_SPEED			0.5
 # define BASEBOARD			0.10
 
-# define MM_TILE_SIZE		1
+# define MM_TILE_SIZE		2
 
 enum{
 	A_KEY = 0,
 	S_KEY = 1,
 	D_KEY = 2,
+	Q_KEY = 12,
 	W_KEY = 13,
 	LEFT_KEY = 123,
 	RIGHT_KEY = 124,
+	DOWN_KEY = 125,
+	UP_KEY = 126,
 	ESC_KEY = 53,
 };
 
