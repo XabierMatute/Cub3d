@@ -10,12 +10,12 @@
 
 
 
-NO ./varys.xpm
+NO ./textures/no_texture.xpm
 
-EA ./varys.xpm
-SO ./varys.xpm
+EA ./textures/ea_texture.xpm
+SO ./textures/so_texture.xpm
 
-WE ./varys.xpm
+WE ./textures/we_texture.xpm
 
 F 87,79,47
 

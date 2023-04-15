@@ -31,7 +31,7 @@ int	ft_get_texture_index(t_game *game, double max_angle, int orientation)
 		return (ft_get_texture_y(game->player[x], game->player[y], max_angle, game->map));
 }
 
-void	ft_paint_sky(t_img *img, int img_x, double wall_height, int sky_color)
+void	ft_paint_ceiling(t_img *img, int img_x, double wall_height, int sky_color)
 {
 	int	img_y;
 	int	end;
@@ -51,7 +51,9 @@ void	ft_paint_floor(t_img *img, int img_x, double wall_height, int floor_color)
 		my_mlx_pixel_put(img, img_x, img_y++, floor_color);
 }
 
-void	ft_paint_wall(t_img *img, t_img *texture, int img_x, double wall_height, int texture_x)
+# define IMG		0
+# define TEXTURE	1
+void	ft_paint_wall(t_img *img, t_img *texture, int indexes[], double wall_height)
 {
 	int		img_y;
 	int		start;
@@ -61,31 +63,43 @@ void	ft_paint_wall(t_img *img, t_img *texture, int img_x, double wall_height, in
 	start = (WIN_HEIGHT - wall_height) / 2;
 	img_y = start;
 	while (img_y < start + wall_height)
-		my_mlx_pixel_put(img, img_x, img_y, ft_get_texture_pixel(texture, texture_x, (img_y - start) * scale));
+	{
+		my_mlx_pixel_put(img, indexes[IMG], img_y, ft_get_texture_pixel(texture, indexes[TEXTURE], (img_y - start) * scale));
+		img_y++;
+	}
 }
 
+t_img	*ft_choose_texture(t_game *game, int orientation, double max_angle)
+{
+	if (ft_angle_in_range(0, M_PI, max_angle) && orientation == HORIZONTAL)
+		return (game->no_texture);
+	else if (ft_angle_in_range(M_PI, 2 * M_PI, max_angle) && orientation == HORIZONTAL)
+		return (game->so_texture);
+	else if (ft_angle_in_range(M_PI_2, M_PI_3_2, max_angle) && orientation == VERTICAL)
+		return (game->we_texture);
+	else
+		return (game->ea_texture);
+}
 
-void	ft_paint_column(t_game *game, t_img *img, int ray_x, double max_angle)
+void	ft_paint_column(t_game *game, t_img *img, int img_x, double max_angle)
 {
 	t_colision	*colision;
-	int		texture_index;
-	double	wall_height;
+	double		wall_height;
+	int			indexes[2];
 
-	// printf("player_x: %f\n", game->player[x]);
-	// printf("player_y: %f\n", game->player[y]);
 	colision = ft_raycasting(game->player[x], game->player[y], max_angle, game->map);
 	wall_height = ft_calculate_wall_height(colision->distance);
-	texture_index = ft_get_texture_index(game, max_angle, colision->orientation);
-
-	#ifdef DEBUG
-	printf("Wall_height: %f\n", wall_height);
-	printf("\n------------Painnt-Commun------------\n");
-	#endif
+	indexes[1] = ft_get_texture_index(game, max_angle, colision->orientation);
+	indexes[0] = img_x;
 
 
-	//ft_paint_sky(img, x, wall_height, mlx->sky);
-	//ft_paint_wall(img, mlx->wall, x, wall_height, texture_index);
-	//ft_paint_sky(img, x, wall_height, mlx->sky);
-	ft_edit_img(img, game, ray_x, wall_height);
+	ft_paint_ceiling(img, img_x, wall_height, game->ceiling_color);
+
+	ft_paint_wall(img, ft_choose_texture(game, colision->orientation, max_angle), indexes, wall_height);
+
+	ft_paint_floor(img, img_x, wall_height, game->floor_color);
+
+
+	//ft_edit_img(img, game, ray_x, wall_height);
 	free(colision);
 }
