@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/15 18:03:32 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:30:42 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ void	ft_free(void *p);
 /* ------------------- END ---------------------*/
 int		endgame(t_game	*game);
 void	endgame_images(t_game *game);
+void	free_texture(t_img	*texture);
 
 /* ------------------- ERRORS ---------------------*/
 int		argc_error(int argc);
