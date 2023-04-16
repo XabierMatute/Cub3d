@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 19:20:55 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:42:08 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,20 +51,35 @@ void	ft_paint_floor(t_img *img, int img_x, double wall_height, int floor_color)
 		my_mlx_pixel_put(img, img_x, img_y++, floor_color);
 }
 
+int	ft_get_wall_start(int wall_height, int *start_gap)
+{
+	if (wall_height > WIN_HEIGHT)
+	{
+		*start_gap = (int)floor((wall_height - WIN_HEIGHT) / 2);
+		return (0);
+	}
+	else
+	{
+		*start_gap = 0;
+		return ((WIN_HEIGHT - wall_height) / 2);
+	}
+}
+
 # define IMG		0
 # define TEXTURE	1
 void	ft_paint_wall(t_img *img, t_img *texture, int indexes[], double wall_height)
 {
 	int		img_y;
 	int		start;
+	int		start_gap;
 	float	scale;
 
 	scale = texture->height / wall_height;
-	start = (WIN_HEIGHT - wall_height) / 2;
+	start = ft_get_wall_start(wall_height, &start_gap);
 	img_y = start;
-	while (img_y < start + wall_height)
+	while (img_y < start + wall_height && img_y < WIN_HEIGHT)
 	{
-		my_mlx_pixel_put(img, indexes[IMG], img_y, ft_get_texture_pixel(texture, indexes[TEXTURE], (img_y - start) * scale));
+		my_mlx_pixel_put(img, indexes[IMG], img_y, ft_get_texture_pixel(texture, indexes[TEXTURE], (img_y - start + start_gap) * scale));
 		img_y++;
 	}
 }
