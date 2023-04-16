@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/15 14:32:24 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/15 18:39:41 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ void	ft_fat_pixel(t_game *game, int x, int y, int color)
 		j = 0;
 		while (j <= MM_TILE_SIZE)
 		{
-			mlx_pixel_put(game->mlx, game->window, x + i, y + j, color);
+			if (x + i < WIN_WIDTH && y + j < WIN_HEIGHT)
+				mlx_pixel_put(game->mlx, game->window, x + i, y + j, color);
 			j++;
 		}
 		i++;
