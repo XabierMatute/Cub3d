@@ -5,10 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/03/21 16:53:35 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/16 19:13:49 by xmatute-         ###   ########.fr        #
+#    Created: 2023/04/16 19:58:48 by xmatute-          #+#    #+#              #
+#    Updated: 2023/04/16 19:58:49 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+
 
 define CUBE
                                                                                                              
@@ -135,6 +137,7 @@ SRC :=	main.c							\
 		painting/ft_lightning_gun.c\
 		painting/ft_paint_columns.c\
 		painting/ft_calculate_wall_height.c\
+		painting/ft_paint_segments.c
 		
 
 HEADER := cub3d.h
