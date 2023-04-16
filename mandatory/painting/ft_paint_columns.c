@@ -6,82 +6,18 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 19:20:55 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/16 19:42:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/16 19:53:43 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "../cub3d.h"
 
-void	ft_put_texture_pixel(t_img *src_img, t_img *dst_img, int x, int y)
-{
-	char *src;
-	char *dst;
-
-	src = src_img->addr + (y * src_img->line_len + x * (src_img->bpp / 8));
-	dst = dst_img->addr + (y * dst_img->line_len + x * (dst_img->bpp / 8));
-	dst = src;
-}
-
-//int	ft_get_pixel
 int	ft_get_texture_index(t_game *game, double max_angle, int orientation)
 {
 	if (orientation == HORIZONTAL)
 		return (ft_get_texture_x(game->player[x], game->player[y], max_angle, game->map));
 	else
 		return (ft_get_texture_y(game->player[x], game->player[y], max_angle, game->map));
-}
-
-void	ft_paint_ceiling(t_img *img, int img_x, double wall_height, int sky_color)
-{
-	int	img_y;
-	int	end;
-
-	end	= (WIN_HEIGHT - wall_height) / 2;
-	img_y = -1;
-	while (++img_y < end)
-		my_mlx_pixel_put(img, img_x, img_y, sky_color);
-}
-
-void	ft_paint_floor(t_img *img, int img_x, double wall_height, int floor_color)
-{
-	int	img_y;
-
-	img_y = (WIN_HEIGHT - wall_height) / 2 + wall_height;
-	while (img_y < WIN_HEIGHT)
-		my_mlx_pixel_put(img, img_x, img_y++, floor_color);
-}
-
-int	ft_get_wall_start(int wall_height, int *start_gap)
-{
-	if (wall_height > WIN_HEIGHT)
-	{
-		*start_gap = (int)floor((wall_height - WIN_HEIGHT) / 2);
-		return (0);
-	}
-	else
-	{
-		*start_gap = 0;
-		return ((WIN_HEIGHT - wall_height) / 2);
-	}
-}
-
-# define IMG		0
-# define TEXTURE	1
-void	ft_paint_wall(t_img *img, t_img *texture, int indexes[], double wall_height)
-{
-	int		img_y;
-	int		start;
-	int		start_gap;
-	float	scale;
-
-	scale = texture->height / wall_height;
-	start = ft_get_wall_start(wall_height, &start_gap);
-	img_y = start;
-	while (img_y < start + wall_height && img_y < WIN_HEIGHT)
-	{
-		my_mlx_pixel_put(img, indexes[IMG], img_y, ft_get_texture_pixel(texture, indexes[TEXTURE], (img_y - start + start_gap) * scale));
-		img_y++;
-	}
 }
 
 t_img	*ft_choose_texture(t_game *game, int orientation, double max_angle)
@@ -114,7 +50,5 @@ void	ft_paint_column(t_game *game, t_img *img, int img_x, double max_angle)
 
 	ft_paint_floor(img, img_x, wall_height, game->floor_color);
 
-
-	//ft_edit_img(img, game, ray_x, wall_height);
 	free(colision);
 }

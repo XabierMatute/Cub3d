@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 17:09:51 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/15 18:03:32 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/16 19:51:52 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 # define NORTH				M_PI_2		
 
-# define ROTATE_SPEED		0.20
+# define ROTATE_SPEED		0.10
 # define MOVE_SPEED			0.5
 # define BASEBOARD			0.10
 
@@ -331,6 +331,9 @@ void	ft_lightning_gun(char **map, double angle, t_game *game);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int ft_get_texture_pixel(t_img *img, int x, int y);
 t_img	*ft_create_img(void *mlx, int width, int height);
+void	ft_paint_ceiling(t_img *img, int img_x, double wall_height, int sky_color);
+void	ft_paint_floor(t_img *img, int img_x, double wall_height, int floor_color);
+void	ft_paint_wall(t_img *img, t_img *texture, int indexes[], double wall_height);
 
 /*===============================================================================*/
 /*									PAINTING									 */
