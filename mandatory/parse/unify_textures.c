@@ -58,7 +58,7 @@ t_img	*mirror_unify(void *mlx, t_img *texture)
 		j = 0;
 		while (j < UNIT)
 		{
-			my_mlx_pixel_put(img, i, j, ft_get_texture_pixel(texture, (UNIT - i) * texture->width / UNIT, j * texture->height / UNIT));
+			my_mlx_pixel_put(img, i, j, ft_get_texture_pixel(texture, (UNIT - i - 1) * texture->width / UNIT, j * texture->height / UNIT));
 			j++;
 		}
 		i++;
