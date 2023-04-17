@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/16 19:58:48 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/16 19:58:49 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/17 12:23:39 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,6 +84,7 @@ SRC :=	main.c							\
 		parse/get_raw_map.c				\
 		parse/get_color.c				\
 		parse/map_open.c				\
+		parse/unify_textures.c				\
 		init/initgame.c					\
 		init/initgame_mlx.c				\
 		init/initgame_window.c			\

@@ -6,43 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:16:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/16 19:51:31 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:19:49 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-static t_img	*unify(void *mlx, t_img *texture)
-{
-	t_img	*img;
-	int			i;
-	int			j;
-
-	img = ft_calloc(sizeof(t_img), 1);
-	img->mlx_img = mlx_new_image(mlx, UNIT, UNIT);
-	img->width = UNIT;
-	img->height = UNIT;
-	img->addr = mlx_get_data_addr(img->mlx_img, &img->bpp,
-										&img->line_len, &img->endian);
-	i = 0;
-	while (i < UNIT)
-	{
-		j = 0;
-		printf("i:%i\n", i);
-		while (j < UNIT)
-		{
-			printf(" j:%i\n", j);
-			// printf("color[%i][%i]:%i\n", i * texture->height / UNIT, j * texture->width / UNIT, ft_get_texture_pixel(texture, i * (texture->height / UNIT), j * (texture->height / UNIT)));
-			// printf("color[%i * %i / %i = %i][%i * %i / %i = %i]:%i\n", i, texture->height, UNIT, (i * texture->height / UNIT), j, texture->height, UNIT, j * texture->height / UNIT, ft_get_texture_pixel(texture, i * (texture->width / UNIT), j * (texture->width / UNIT)));
-			my_mlx_pixel_put(img, i, j, ft_get_texture_pixel(texture, i * texture->width / UNIT, j * texture->height / UNIT));
-			j++;
-		}
-		i++;
-	}
-	free_texture(texture);
-	return(img);
-}
-
 
 t_img	*texture_error(t_img *texture, char *id)
 {
@@ -72,7 +40,9 @@ t_img	*get_img(void *mlx, char *path, char *id)
 										&texture->line_len, &texture->endian);
 	if (!texture->addr)
 		return (texture_error(texture, id));
-	// return (texture);
+	if (id[0] == 'W' || id[0] == 'S')
+		return (mirror_unify(mlx, texture));
+
 	return (unify(mlx, texture));
 }
 

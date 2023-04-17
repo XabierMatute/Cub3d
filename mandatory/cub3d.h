@@ -6,10 +6,9 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 19:58:32 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/16 19:58:33 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/17 12:24:46 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #ifndef CUB3D_H
 # define CUB3D_H
@@ -28,7 +27,7 @@
 
 # define NORTH				M_PI_2		
 
-# define ROTATE_SPEED		0.10
+# define ROTATE_SPEED		1.57079632679489661923132169163975144 / 4
 # define MOVE_SPEED			0.5
 # define BASEBOARD			0.10
 
@@ -114,6 +113,8 @@ char	**get_map(char *path);
 int		map_open(char *path);
 size_t	map_height(int fd);
 int		get_color(char *path, char *id);
+t_img	*unify(void *mlx, t_img *texture);
+t_img	*mirror_unify(void *mlx, t_img *texture);
 
 /* ------------------- INIT ---------------------*/
 t_game	*initgame(char *path);
@@ -331,7 +332,7 @@ double	ft_calculate_wall_height(double ray_distance);
 void	ft_paint_column(t_game *game, t_img *img, int x, double max_angle);
 void	ft_lightning_gun(char **map, double angle, t_game *game);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
-int ft_get_texture_pixel(t_img *img, int x, int y);
+int 	ft_get_texture_pixel(t_img *img, int x, int y);
 t_img	*ft_create_img(void *mlx, int width, int height);
 void	ft_paint_ceiling(t_img *img, int img_x, double wall_height, int sky_color);
 void	ft_paint_floor(t_img *img, int img_x, double wall_height, int floor_color);
