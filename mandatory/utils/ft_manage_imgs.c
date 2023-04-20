@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:41:56 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/20 20:17:43 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/20 20:20:40 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int ft_get_texture_pixel(t_img *img, int x, int y)
 {
 	char	*dst;
 
-	if (x < 0 || y < 0 || x > img->width || y > img->height)
-		printf("--------------\nX: %d\nY: %d\n", x, y);
 	if (x >= img->width)
 		x = img->width - 1;
 	if (y >= img->height)
