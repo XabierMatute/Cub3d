@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 19:58:32 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/17 12:24:46 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/19 19:58:37 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,7 @@ int		map_close_error(void);
 
 // # define WIN_WIDTH			1200
 // # define WIN_HEIGHT			600
-# define UNIT				64
+# define UNIT					64
 // # define MOVE_SPEED			25
 // # define ANGLE_SPEED		M_PI / 10
 # define FOV				M_PI / 3
@@ -319,6 +319,10 @@ double	ft_third_quadrant(double player_x, double player_y, double angle, char **
 double	ft_get_distance(double player_x, double player_y, double ray_x, double ray_y);
 int	ft_check_wall(char **map, double ray_x, double ray_y);
 int	ft_angle_in_range(double start, double end, double angle);
+
+
+int	ft_check_horizontal_walls(char **map, double ray_x, double ray_y, double angle);
+int	ft_check_vertical_walls(char **map, double ray_x, double ray_y, double angle);
 
 /* ------------------------------- ft_create_minimap -------------------------------*/
 double	ft_normalize_angle(double angle);

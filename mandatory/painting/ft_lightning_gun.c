@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 13:47:24 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/15 14:34:39 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/19 17:53:50 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ void	*ft_send_height_and_angle(double wall_height, double angle)
 
 void	ft_lightning_gun(char **map, double angle, t_game *game)
 {
-	int		x;
+	int		ray_x;
 	double	min_angle;
 	double	max_angle;
 	t_img	*img;
 
 	(void)map;
 	ft_calculate_viewport(angle, &min_angle, &max_angle);
-	x = 0;
+	ray_x = 0;
 	mlx_clear_window(game->mlx, game->window);
 	img = ft_create_img(game->mlx, WIN_WIDTH, WIN_HEIGHT);
 
@@ -41,11 +41,11 @@ void	ft_lightning_gun(char **map, double angle, t_game *game)
 	printf("min: %f\nmax: %f\n", min_angle, max_angle);
 	#endif
 
-	while (x < WIN_WIDTH)
+	while (ray_x < WIN_WIDTH)
 	{
 		#ifdef DEBUG
 		printf("==============================================\n");
-		printf("		RAY: %d					 \n", x);
+		printf("		RAY: %d					 \n", ray_x);
 		printf("==============================================\n");
 		printf("Angle: %f\n", max_angle);
 		printf("Normalize-angle: %f\n", ft_normalize_angle(max_angle));
@@ -60,7 +60,7 @@ void	ft_lightning_gun(char **map, double angle, t_game *game)
 		printf("Wall_height: %f\n", wall_height);
 		*/
 
-		ft_paint_column(game, img, x, max_angle);
+		ft_paint_column(game, img, ray_x, max_angle);
 
 		//ft_edit_img(img, mlx, x, wall_height);
 
@@ -70,7 +70,7 @@ void	ft_lightning_gun(char **map, double angle, t_game *game)
 			max_angle += 2 * M_PI;
 
 
-		x++;
+		ray_x++;
 		#ifdef DEBUG
 		printf("\n\n\n\n");
 		#endif
