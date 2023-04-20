@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 13:16:23 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/17 12:19:49 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/20 19:14:09 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@ t_img	*texture_error(t_img *texture, char *id)
 t_img	*get_img(void *mlx, char *path, char *id)
 {
 	t_img	*texture;
-	char		*data;
-	int			*w;
-	int			*h;
+	char	*data;
+	int		*w;
+	int		*h;
 
 	texture = ft_calloc(sizeof(t_img), 1);
 	w = &(texture->width);
@@ -37,16 +37,13 @@ t_img	*get_img(void *mlx, char *path, char *id)
 	if (!texture->mlx_img)
 		return (texture_error(texture, id));
 	texture->addr = mlx_get_data_addr(texture->mlx_img, &texture->bpp,
-										&texture->line_len, &texture->endian);
+			&texture->line_len, &texture->endian);
 	if (!texture->addr)
 		return (texture_error(texture, id));
 	if (id[0] == 'W' || id[0] == 'S')
 		return (mirror_unify(mlx, texture));
-
 	return (unify(mlx, texture));
 }
-
-
 
 t_game	*initgame_images(t_game *game, char *path)
 {
@@ -55,7 +52,7 @@ t_game	*initgame_images(t_game *game, char *path)
 	game->so_texture = get_img(game->mlx, path, "SO");
 	game->we_texture = get_img(game->mlx, path, "WE");
 	if (!game->no_texture || !game->ea_texture
-		|| !game->so_texture || !game->we_texture)//aqui no sales?
+		|| !game->so_texture || !game->we_texture)
 		endgame(game);
 	return (game);
 }
