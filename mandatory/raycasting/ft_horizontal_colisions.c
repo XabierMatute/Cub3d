@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:06:04 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/19 19:58:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/20 19:20:09 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 static double	ft_get_ray_y(double player_y, double angle)
 {
@@ -20,13 +20,15 @@ static double	ft_get_ray_y(double player_y, double angle)
 		return (floor(player_y / UNIT) * UNIT + UNIT);
 }
 
-static double	ft_get_ray_x(double player_x, double player_y, double ray_y, double angle)
+static double	ft_get_ray_x(double player_x, double player_y, double ray_y, \
+	double angle)
 {
 	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
-		return (player_x - fabs(player_y - ray_y) / tan(ft_normalize_angle(angle)));
+		return (\
+		player_x - fabs(player_y - ray_y) / tan(ft_normalize_angle(angle)));
 	else
-		return (player_x + fabs(player_y - ray_y) / tan(ft_normalize_angle(angle)));
-
+		return (\
+		player_x + fabs(player_y - ray_y) / tan(ft_normalize_angle(angle)));
 }
 
 static void	ft_find_gap(double *ray_gap_x, double *ray_gap_y, double angle)
@@ -35,15 +37,14 @@ static void	ft_find_gap(double *ray_gap_x, double *ray_gap_y, double angle)
 		*ray_gap_y = 0 - UNIT;
 	else
 		*ray_gap_y = UNIT;
-	//*ray_gap_x = *ray_gap_y / tan(ft_normalize_angle(angle));
-	
 	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
 		*ray_gap_x = 0 - fabs(*ray_gap_y) / tan(ft_normalize_angle(angle));
 	else
 		*ray_gap_x = fabs(*ray_gap_y) / tan(ft_normalize_angle(angle));
 }
 
-double	ft_horizontal_colisions(double player_x, double player_y,  double angle, char **map)
+double	ft_horizontal_colisions(double player_x, double player_y, \
+	double angle, char **map)
 {
 	double	ray_x;
 	double	ray_y;

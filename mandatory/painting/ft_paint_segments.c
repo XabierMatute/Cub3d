@@ -6,7 +6,7 @@
 /*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 19:49:48 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/16 19:50:24 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/20 19:25:27 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	ft_paint_wall(t_img *img, t_img *texture, int indexes[], double wall_height
 	float	scale;
 
 	scale = texture->height / wall_height;
-	start = ft_get_wall_start(wall_height, &start_gap);
+	start = ft_get_wall_start(wall_height, &start_gap) - 1;
 	img_y = start;
 	while (img_y < start + wall_height && img_y < WIN_HEIGHT)
 	{
