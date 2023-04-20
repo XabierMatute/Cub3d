@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 19:53:53 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/20 17:57:54 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/20 19:36:12 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ double	ft_return_min(double horizontal_colision, double vertical_colision)
 double	ft_return_orientation(double horizontal_colision, double vertical_colision)
 {
 	if (vertical_colision < horizontal_colision)
-		return (printf("->>VERTICAL\n"), VERTICAL);
+		return (VERTICAL);
 	else
-		return (printf("->>HORIZOTAL\n"), HORIZONTAL);
+		return (HORIZONTAL);
 }
 
 t_colision *ft_raycasting(double player_x, double player_y, double angle, char **map)

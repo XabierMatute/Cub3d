@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:14:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/19 19:58:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/20 19:36:47 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static double	ft_get_ray_x(double player_x, double angle)
 {
-	printf("------->floor(payer_x / UNIT): %f\n", floor(player_x / UNIT));
 	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
 		return (floor(player_x / UNIT) * UNIT );
 	else
