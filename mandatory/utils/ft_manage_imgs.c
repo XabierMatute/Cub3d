@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:41:56 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/15 20:12:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/20 20:17:43 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,12 @@ int ft_get_texture_pixel(t_img *img, int x, int y)
 {
 	char	*dst;
 
+	if (x < 0 || y < 0 || x > img->width || y > img->height)
+		printf("--------------\nX: %d\nY: %d\n", x, y);
+	if (x >= img->width)
+		x = img->width - 1;
+	if (y >= img->height)
+		y = img->height - 1;
 	dst = img->addr + (y * img->line_len + x * (img->bpp / 8));
 	return (*(unsigned int*)dst);
 }
@@ -51,25 +57,3 @@ t_img	*ft_save_xpm(t_game *game, char *path)
 	return(img);
 }
 
-void	ft_edit_img(t_img *img, t_game *game, int x, int wall_height)
-{
-	int	y;
-	int	floor_px;
-
-	//floor_px = (WIN_HEIGHT - wall_height) / 2;
-	y = -1;
-	/*
-	while (++y < wall_height)
-		my_mlx_pixel_put(img, 0, y, 0x607CEF);
-		*/
-	floor_px = (WIN_HEIGHT - wall_height) / 2;
-	while (++y < floor_px)
-		my_mlx_pixel_put(img, x, y, game->floor_color);
-	while (y < floor_px + wall_height)
-	{
-		//printf("->y: %d\n", y);
-		my_mlx_pixel_put(img, x, y++, 0x607CEF);
-	}
-	while (y < WIN_HEIGHT)
-		my_mlx_pixel_put(img, x, y++, game->ceiling_color);
-}
