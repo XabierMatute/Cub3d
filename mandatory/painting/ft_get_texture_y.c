@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:49:21 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/20 18:02:45 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static double	ft_get_ray_x(double player_x, double angle)
 {
 	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
-		return (floor(player_x / UNIT) * UNIT - 1);
+		return (floor(player_x / UNIT) * UNIT);
 	else
 		return (floor(player_x / UNIT) * UNIT + UNIT);
 }
@@ -55,7 +55,7 @@ int	ft_get_texture_y(double player_x, double player_y,  double angle, char **map
 
 	ft_find_gap(&ray_gap_x, &ray_gap_y, angle);
 
-	while (!ft_check_wall(map, ray_x, ray_y))
+	while (!ft_check_vertical_walls(map, ray_x, ray_y, angle))
 	{
 		ray_x += ray_gap_x;
 		ray_y += ray_gap_y;

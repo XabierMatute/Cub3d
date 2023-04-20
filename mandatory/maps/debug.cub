@@ -1,9 +1,9 @@
-NO ./varys.xpm
+NO ./textures/no_texture.xpm
 
-EA ./textures/amarillo.xpm
-SO ./textures/YM.xpm
+EA ./textures/ea_texture.xpm
+SO ./textures/so_texture.xpm
 
-WE ./textures/l.xpm
+WE ./textures/we_texture.xpm
 
 F 187,179,147
 
