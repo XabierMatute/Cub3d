@@ -1,0 +1,18 @@
+SO ./textures/l.xpm
+NO ./textures/l.xpm
+
+F 42,69,123
+
+EA ./textures/l.xpm
+
+C 188,45,66
+
+WE ./textures/l.xpm
+
+
+
+1111111111111
+1001000000001
+1000011111001
+1N00110000001
+1111111111111
