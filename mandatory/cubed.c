@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/15 18:39:41 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/20 20:54:02 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ int	putfloor(t_game *game, char **map)
 		j = 0;
 		while (map[i][j])
 		{
-			if(map[i][j] == '0')
-				ft_fat_pixel(game, j * MM_TILE_SIZE, i * MM_TILE_SIZE, 0);
+			if (map[i][j] == '0')
+				ft_fat_pixel(game, j * MM_TILE_SIZE,
+					i * MM_TILE_SIZE, 0);
 			j++;
 		}
 		i++;
@@ -53,7 +54,8 @@ int	putfloor(t_game *game, char **map)
 
 int	putplayer(t_game *game, double player[3])
 {
-	ft_fat_pixel(game, (int)(MM_TILE_SIZE * player[x]), (int)(MM_TILE_SIZE * player[y]), 16711680);
+	ft_fat_pixel(game, (int)(MM_TILE_SIZE * (player[x] - 0.5)),
+		(int)(MM_TILE_SIZE * (player[y] - 0.5)), 16711680);
 	return (0);
 }
 
@@ -61,7 +63,7 @@ int	putminimap(t_game *game, char **map, double player[3])
 {
 	putfloor(game, map);
 	putplayer(game, player);
-	return(1);
+	return (1);
 }
 
 int	refresh_frame(t_game *game)
