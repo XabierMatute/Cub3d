@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:04:14 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/20 20:25:19 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/21 18:17:15 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ double	ft_get_distance(double player_x, double player_y, \
 	return (sqrt(pow(ray_x - player_x, 2) + pow(ray_y - player_y, 2)));
 }
 
-//El error esta en que el map lo has puesto en las funciones como int
 int	ft_check_wall(char **map, int x, int y)
 {
 	if (!((0 <= x && x < (int)ft_strlen(map[0])) && \
