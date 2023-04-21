@@ -6,11 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 18:40:17 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/14 19:09:55 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/21 18:22:14 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 static double	ft_calculate_min_angle(double angle)
 {
@@ -36,7 +36,8 @@ static double	ft_calculate_max_angle(double angle)
 		return (angle + FOV_2);
 }
 
-void	ft_calculate_viewport(double angle, double *min_angle, double *max_angle)
+void	ft_calculate_viewport(double angle, double *min_angle, \
+	double *max_angle)
 {
 	*min_angle = ft_calculate_min_angle(angle);
 	*max_angle = ft_calculate_max_angle(angle);
