@@ -6,24 +6,13 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:07:37 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/16 19:41:50 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/21 18:25:27 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "../cub3d.h"
+#include "../cub3d.h"
 
 double	ft_calculate_wall_height(double ray_distance)
 {
-	double	output;
-
-	#ifdef DEBUG
-	printf("Ray_distance: %f\n", ray_distance);
-	#endif
-
-	output = (UNIT / ray_distance) * SCREEN_DISTANCE;
-	/*
-	if (output > WIN_HEIGHT)
-		return (WIN_HEIGHT);
-		*/
-	return(output);
+	return ((UNIT / ray_distance) * SCREEN_DISTANCE);
 }
