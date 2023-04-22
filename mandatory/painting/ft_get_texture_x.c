@@ -2,11 +2,11 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_get_texture_x.c                                 :+:      :+:    :+:   */
-/*                                                    +:+; +:+         +:+    */
-/*   By: jperez <jperez@student.42urduliz.>         +#+  +:+       +#+        */
+/*                                                    +:+ +:+         +:+     */
+/*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:45:41 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/21 18:28:25 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 17:51:48 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static double	ft_get_ray_y(double player_y, double angle)
 static double	ft_get_ray_x(double player_x, double player_y, double ray_y, \
 	double angle)
 {
-	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
+	if (ft_angle_in_range(M_PI_2, 3 * M_PI_2, angle))
 		return (\
 		player_x - fabs(player_y - ray_y) / tan(ft_normalize_angle(angle)));
 	else
@@ -37,7 +37,7 @@ static void	ft_find_gap(double *ray_gap_x, double *ray_gap_y, double angle)
 		*ray_gap_y = 0 - UNIT;
 	else
 		*ray_gap_y = UNIT;
-	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
+	if (ft_angle_in_range(M_PI_2, 3 * M_PI_2, angle))
 		*ray_gap_x = 0 - fabs(*ray_gap_y) / tan(ft_normalize_angle(angle));
 	else
 		*ray_gap_x = fabs(*ray_gap_y) / tan(ft_normalize_angle(angle));

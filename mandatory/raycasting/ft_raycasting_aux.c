@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 19:04:14 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/21 18:17:15 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 17:52:00 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	ft_check_vertical_walls(char **map, double ray_x, double ray_y, \
 
 	x = (int)floor(ray_x / UNIT);
 	y = (int)floor(ray_y / UNIT);
-	if (!ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
+	if (!ft_angle_in_range(M_PI_2, 3 * M_PI_2, angle))
 		return (ft_check_wall(map, x, y));
 	else
 		return (ft_check_wall(map, --x, y));

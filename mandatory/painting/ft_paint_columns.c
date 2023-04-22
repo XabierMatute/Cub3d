@@ -6,11 +6,14 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 19:20:55 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/21 19:52:08 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 18:11:33 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
+
+t_colision	*ft_raycasting(double player_x, double player_y,
+				double angle, char **map);
 
 int	ft_get_texture_index(t_game *game, double max_angle, int orientation)
 {
@@ -29,7 +32,7 @@ t_img	*ft_choose_texture(t_game *game, int orientation, double max_angle)
 	else if (ft_angle_in_range(M_PI, 2 * M_PI, max_angle) && \
 		orientation == HORIZONTAL)
 		return (game->so_texture);
-	else if (ft_angle_in_range(M_PI_2, M_PI_3_2, max_angle) && \
+	else if (ft_angle_in_range(M_PI_2, 3 * M_PI_2, max_angle) && \
 		orientation == VERTICAL)
 		return (game->we_texture);
 	else

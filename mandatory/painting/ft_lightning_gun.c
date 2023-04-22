@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 13:47:24 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/21 18:33:34 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 17:55:35 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_lightning_gun(char **map, double angle, t_game *game)
 	while (ray_x < WIN_WIDTH)
 	{
 		ft_paint_column(game, img, ray_x, max_angle);
-		max_angle -= ANGLE_GAP;
+		max_angle -= FOV / WIN_WIDTH;
 		if (max_angle < 0)
 			max_angle += 2 * M_PI;
 		ray_x++;

@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 17:14:12 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/21 18:19:59 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 17:52:02 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static double	ft_get_ray_x(double player_x, double angle)
 {
-	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
+	if (ft_angle_in_range(M_PI_2, 3 * M_PI_2, angle))
 		return (floor(player_x / UNIT) * UNIT);
 	else
 		return (floor(player_x / UNIT) * UNIT + UNIT);
@@ -33,7 +33,7 @@ static double	ft_get_ray_y(double player_y, double player_x, double ray_x, \
 
 static void	ft_find_gap(double *ray_gap_x, double *ray_gap_y, double angle)
 {
-	if (ft_angle_in_range(M_PI_2, M_PI_3_2, angle))
+	if (ft_angle_in_range(M_PI_2, 3 * M_PI_2, angle))
 		*ray_gap_x = 0 - UNIT;
 	else
 		*ray_gap_x = UNIT;
