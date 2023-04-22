@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/22 18:51:33 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 18:57:10 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	key_hook(int k, t_game *game)
 int	cubed(t_game	*game)
 {
 	refresh_frame(game);
-	mlx_hook(game->window, 2, (1L << 1), key_hook, game);//hay que hacer tambien lo de la x? si
+	mlx_hook(game->window, 2, (1L << 1), key_hook, game);
+	mlx_hook(game->window, 17, 1L << 17, endgame, game);
 	mlx_loop(game->mlx);
 	return (endgame(game));
 }
