@@ -6,23 +6,11 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 13:47:24 by jperez            #+#    #+#             */
-/*   Updated: 2023/04/21 18:33:34 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 18:06:16 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-void	*ft_send_height_and_angle(double wall_height, double angle)
-{
-	double	*output;
-
-	output = (double *)malloc(sizeof(double) * 2);
-	if (!output)
-		exit(-1);
-	output[0] = wall_height;
-	output[1] = angle;
-	return (output);
-}
 
 void	ft_lightning_gun(char **map, double angle, t_game *game)
 {
