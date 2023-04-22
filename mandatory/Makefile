@@ -6,7 +6,7 @@
 #    By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/16 19:58:48 by xmatute-          #+#    #+#              #
-#    Updated: 2023/04/17 12:23:39 by xmatute-         ###   ########.fr        #
+#    Updated: 2023/04/22 17:43:37 by xmatute-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -138,7 +138,9 @@ SRC :=	main.c							\
 		painting/ft_lightning_gun.c\
 		painting/ft_paint_columns.c\
 		painting/ft_calculate_wall_height.c\
-		painting/ft_paint_segments.c
+		painting/ft_paint_segments.c	\
+		painting/minimap.c	\
+		
 		
 
 HEADER := cub3d.h

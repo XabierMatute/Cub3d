@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 19:58:32 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/20 19:59:40 by jperez           ###   ########.fr       */
+/*   Updated: 2023/04/22 17:44:02 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,5 +349,5 @@ int	key_hook(int keycode, t_game *game);
 int	ft_main_loop(t_game *game);
 int	ft_get_texture_x(double player_x, double player_y,  double angle, char **map);
 int	ft_get_texture_y(double player_x, double player_y,  double angle, char **map);
-
+int	putminimap(t_game *game, char **map, double player[3]);
 #endif
