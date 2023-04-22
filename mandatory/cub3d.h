@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 19:58:32 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/22 17:44:02 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/22 17:48:58 by xmatute-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@
 
 # define NORTH				M_PI_2		
 
-# define ROTATE_SPEED		1.57079632679489661923132169163975144 / 4
+# define ROTATE_SPEED		0.3926990816987241395
 # define MOVE_SPEED			0.5
+
 # define BASEBOARD			0.10
 
 # define MM_TILE_SIZE		2
@@ -60,14 +61,14 @@ enum {
 
 typedef struct s_img
 {
-    void    *mlx_img;
-    char    *addr;
-    int     bpp;
-    int     line_len;
-    int     endian;
-    int     height;
-    int     width;
-}   t_img;
+	void	*mlx_img;
+	char	*addr;
+	int		bpp;
+	int		line_len;
+	int		endian;
+	int		height;
+	int		width;
+}	t_img;
 
 typedef struct s_game{
 	void		*mlx;
