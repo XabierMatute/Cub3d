@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/16 19:58:32 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/22 18:10:41 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/22 18:51:07 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -287,7 +287,7 @@ void	ft_calculate_viewport(double angle, double *min_angle,
 			double *max_angle);
 double	ft_calculate_wall_height(double ray_distance);
 void	ft_paint_column(t_game *game, t_img *img, int x, double max_angle);
-void	ft_lightning_gun(char **map, double angle, t_game *game);
+void	ft_lightning_gun(double angle, t_game *game);
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int		ft_get_texture_pixel(t_img *img, int x, int y);
 t_img	*ft_create_img(void *mlx, int width, int height);

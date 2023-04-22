@@ -6,20 +6,19 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/22 18:12:22 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/22 18:12:25 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/22 18:50:53 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	ft_lightning_gun(char **map, double angle, t_game *game)
+void	ft_lightning_gun(double angle, t_game *game)
 {
 	int		ray_x;
 	double	min_angle;
 	double	max_angle;
 	t_img	*img;
 
-	(void)map;
 	ft_calculate_viewport(angle, &min_angle, &max_angle);
 	ray_x = 0;
 	mlx_clear_window(game->mlx, game->window);

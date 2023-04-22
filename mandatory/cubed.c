@@ -6,7 +6,7 @@
 /*   By: xmatute- <xmatute-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 18:40:49 by xmatute-          #+#    #+#             */
-/*   Updated: 2023/04/22 17:42:18 by xmatute-         ###   ########.fr       */
+/*   Updated: 2023/04/22 18:51:33 by jperez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	refresh_frame(t_game *game)
 {
 	game->player[x] *= UNIT;
 	game->player[y] *= UNIT;
-	ft_lightning_gun(game->map, game->player[angle], game);
+	ft_lightning_gun(game->player[angle], game);
 	game->player[x] /= UNIT;
 	game->player[y] /= UNIT;
 	putminimap(game, game->map, game->player);
